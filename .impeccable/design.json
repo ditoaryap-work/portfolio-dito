@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T08:22:15.000Z",
+  "title": "Design System: DitoOS",
+  "extensions": {
+    "colorMeta": {
+      "desktop": {
+        "role": "primary",
+        "displayName": "Desktop",
+        "tonalRamp": [
+          "oklch(15% 0.0907 195.79)",
+          "oklch(26% 0.0907 195.79)",
+          "oklch(38% 0.0907 195.79)",
+          "oklch(49% 0.0907 195.79)",
+          "oklch(61% 0.0907 195.79)",
+          "oklch(72% 0.0907 195.79)",
+          "oklch(84% 0.0907 195.79)",
+          "oklch(95% 0.0907 195.79)"
+        ]
+      },
+      "desktop-deep": {
+        "role": "primary",
+        "displayName": "Desktop Deep",
+        "tonalRamp": [
+          "oklch(15% 0.0787 197.16)",
+          "oklch(26% 0.0787 197.16)",
+          "oklch(38% 0.0787 197.16)",
+          "oklch(49% 0.0787 197.16)",
+          "oklch(61% 0.0787 197.16)",
+          "oklch(72% 0.0787 197.16)",
+          "oklch(84% 0.0787 197.16)",
+          "oklch(95% 0.0787 197.16)"
+        ]
+      },
+      "desktop-ink": {
+        "role": "primary",
+        "displayName": "Desktop Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0640 197.88)",
+          "oklch(26% 0.0640 197.88)",
+          "oklch(38% 0.0640 197.88)",
+          "oklch(49% 0.0640 197.88)",
+          "oklch(61% 0.0640 197.88)",
+          "oklch(72% 0.0640 197.88)",
+          "oklch(84% 0.0640 197.88)",
+          "oklch(95% 0.0640 197.88)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0106 100.82)",
+          "oklch(26% 0.0106 100.82)",
+          "oklch(38% 0.0106 100.82)",
+          "oklch(49% 0.0106 100.82)",
+          "oklch(61% 0.0106 100.82)",
+          "oklch(72% 0.0106 100.82)",
+          "oklch(84% 0.0106 100.82)",
+          "oklch(95% 0.0106 100.82)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0103 151.41)",
+          "oklch(26% 0.0103 151.41)",
+          "oklch(38% 0.0103 151.41)",
+          "oklch(49% 0.0103 151.41)",
+          "oklch(61% 0.0103 151.41)",
+          "oklch(72% 0.0103 151.41)",
+          "oklch(84% 0.0103 151.41)",
+          "oklch(95% 0.0103 151.41)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0080 145.45)",
+          "oklch(26% 0.0080 145.45)",
+          "oklch(38% 0.0080 145.45)",
+          "oklch(49% 0.0080 145.45)",
+          "oklch(61% 0.0080 145.45)",
+          "oklch(72% 0.0080 145.45)",
+          "oklch(84% 0.0080 145.45)",
+          "oklch(95% 0.0080 145.45)"
+        ]
+      },
+      "title": {
+        "role": "primary",
+        "displayName": "Title",
+        "tonalRamp": [
+          "oklch(15% 0.1879 264.05)",
+          "oklch(26% 0.1879 264.05)",
+          "oklch(38% 0.1879 264.05)",
+          "oklch(49% 0.1879 264.05)",
+          "oklch(61% 0.1879 264.05)",
+          "oklch(72% 0.1879 264.05)",
+          "oklch(84% 0.1879 264.05)",
+          "oklch(95% 0.1879 264.05)"
+        ]
+      },
+      "title-end": {
+        "role": "primary",
+        "displayName": "Title End",
+        "tonalRamp": [
+          "oklch(15% 0.1236 239.29)",
+          "oklch(26% 0.1236 239.29)",
+          "oklch(38% 0.1236 239.29)",
+          "oklch(49% 0.1236 239.29)",
+          "oklch(61% 0.1236 239.29)",
+          "oklch(72% 0.1236 239.29)",
+          "oklch(84% 0.1236 239.29)",
+          "oklch(95% 0.1236 239.29)"
+        ]
+      },
+      "highlight": {
+        "role": "neutral",
+        "displayName": "Highlight",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "shadow": {
+        "role": "neutral",
+        "displayName": "Shadow",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "note": {
+        "role": "secondary",
+        "displayName": "Note",
+        "tonalRamp": [
+          "oklch(15% 0.0952 98.90)",
+          "oklch(26% 0.0952 98.90)",
+          "oklch(38% 0.0952 98.90)",
+          "oklch(49% 0.0952 98.90)",
+          "oklch(61% 0.0952 98.90)",
+          "oklch(72% 0.0952 98.90)",
+          "oklch(84% 0.0952 98.90)",
+          "oklch(95% 0.0952 98.90)"
+        ]
+      },
+      "entry-ground": {
+        "role": "primary",
+        "displayName": "Entry Ground",
+        "tonalRamp": [
+          "oklch(15% 0.0527 204.58)",
+          "oklch(26% 0.0527 204.58)",
+          "oklch(38% 0.0527 204.58)",
+          "oklch(49% 0.0527 204.58)",
+          "oklch(61% 0.0527 204.58)",
+          "oklch(72% 0.0527 204.58)",
+          "oklch(84% 0.0527 204.58)",
+          "oklch(95% 0.0527 204.58)"
+        ]
+      },
+      "portrait-ground": {
+        "role": "primary",
+        "displayName": "Portrait Ground",
+        "tonalRamp": [
+          "oklch(15% 0.0425 210.15)",
+          "oklch(26% 0.0425 210.15)",
+          "oklch(38% 0.0425 210.15)",
+          "oklch(49% 0.0425 210.15)",
+          "oklch(61% 0.0425 210.15)",
+          "oklch(72% 0.0425 210.15)",
+          "oklch(84% 0.0425 210.15)",
+          "oklch(95% 0.0425 210.15)"
+        ]
+      },
+      "entry-ink": {
+        "role": "neutral",
+        "displayName": "Entry Light Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0264 109.21)",
+          "oklch(26% 0.0264 109.21)",
+          "oklch(38% 0.0264 109.21)",
+          "oklch(49% 0.0264 109.21)",
+          "oklch(61% 0.0264 109.21)",
+          "oklch(72% 0.0264 109.21)",
+          "oklch(84% 0.0264 109.21)",
+          "oklch(95% 0.0264 109.21)"
+        ]
+      },
+      "entry-accent": {
+        "role": "secondary",
+        "displayName": "Entry Accent",
+        "tonalRamp": [
+          "oklch(15% 0.0992 124.15)",
+          "oklch(26% 0.0992 124.15)",
+          "oklch(38% 0.0992 124.15)",
+          "oklch(49% 0.0992 124.15)",
+          "oklch(61% 0.0992 124.15)",
+          "oklch(72% 0.0992 124.15)",
+          "oklch(84% 0.0992 124.15)",
+          "oklch(95% 0.0992 124.15)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Case-story display",
+        "purpose": "Case-study hero headings."
+      },
+      "headline": {
+        "displayName": "Welcome headline",
+        "purpose": "Personal welcome headline."
+      },
+      "title": {
+        "displayName": "Reading section title",
+        "purpose": "Case-study section headings."
+      },
+      "body": {
+        "displayName": "Reading copy",
+        "purpose": "Long-form project narrative, maximum 65ch."
+      },
+      "label": {
+        "displayName": "Bitmap UI label",
+        "purpose": "Controls, toolbar, form and taskbar text."
+      },
+      "entry-headline": {
+        "displayName": "Entry introduction",
+        "purpose": "Personal sign-in introduction on dark teal."
+      }
+    },
+    "shadows": [
+      {
+        "name": "window-shadow",
+        "value": "8px 12px 25px rgb(0 45 46 / 22%)",
+        "purpose": "Floating software windows."
+      },
+      {
+        "name": "raised-control",
+        "value": "inset -1px -1px #0a0a0a,inset 1px 1px white,inset -2px -2px #808080,inset 2px 2px #dfdfdf",
+        "purpose": "Unpressed controls."
+      },
+      {
+        "name": "pressed-control",
+        "value": "inset -1px -1px white,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px #808080",
+        "purpose": "Pressed controls and active task buttons."
+      },
+      {
+        "name": "desktop-note",
+        "value": "3px 8px 14px rgb(0 48 49 / 18%)",
+        "purpose": "The personal desktop note."
+      },
+      {
+        "name": "sign-in-card",
+        "value": "14px 20px 45px rgb(0 20 25 / 28%)",
+        "purpose": "Entry card beneath its software bevel."
+      },
+      {
+        "name": "selected-journey-filter",
+        "value": "inset 1px 1px #333,inset -1px -1px white",
+        "purpose": "Selected journey category."
+      }
+    ],
+    "motion": [
+      {
+        "name": "window-reveal",
+        "value": "opacity 0→1; scale .96→1; .28s; power3.out",
+        "purpose": "Window entry, bypassed for reduced motion."
+      },
+      {
+        "name": "desktop-entry",
+        "value": "opacity 0→1; y 6→0; .35s; stagger .045s; power3.out",
+        "purpose": "Desktop icon entry, bypassed for reduced motion."
+      },
+      {
+        "name": "restart-progress",
+        "value": ".8s power2.out; overlay fade .22s",
+        "purpose": "Optional session restart; bypassed for reduced motion."
+      },
+      {
+        "name": "leave-sign-in",
+        "value": "opacity 1→0; y 0→-12; .35s; power3.inOut",
+        "purpose": "Entry into desktop; bypassed for reduced motion."
+      },
+      {
+        "name": "portrait-smoothing",
+        "value": "exponential time constants: 110ms reveal; 240ms return; delta capped at 40ms",
+        "purpose": "Reversible local photo reveal; event-driven, visible-only animation."
+      },
+      {
+        "name": "portrait-canvas-ready",
+        "value": "opacity .25s",
+        "purpose": "Show the Canvas after the sampled photo is ready."
+      },
+      {
+        "name": "desktop-icon-lift",
+        "value": "translateY(-4px); .18s ease-out",
+        "purpose": "Hover and keyboard-focus feedback."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile-desktop",
+        "value": "700px"
+      },
+      {
+        "name": "wide-desktop-min",
+        "value": "1550px"
+      },
+      {
+        "name": "low-desktop-height-max",
+        "value": "730px (with min-width: 701px)"
+      },
+      {
+        "name": "compact-case-study",
+        "value": "800px"
+      },
+      {
+        "name": "mobile-case-study",
+        "value": "480px"
+      },
+      {
+        "name": "compact-sign-in",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Enter workspace",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Silver sign-in action; primary is distinguished by bold type.",
+      "html": "<button class=\"ds-button-primary\">Enter workspace →</button>",
+      "css": ".ds-button-primary{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);background:#c0c0c0;color:var(--ink,#222723);border:0;border-radius:0;min-width:75px;min-height:36px;padding:8px;font-size:11px;font-weight:700;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px white,inset -2px -2px #808080,inset 2px 2px #dfdfdf;cursor:pointer}.ds-button-primary:hover{color:var(--ink,#222723)}.ds-button-primary:active{box-shadow:inset -1px -1px white,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px #808080}.ds-button-primary:focus-visible{outline:2px dotted currentColor;outline-offset:4px;}"
+    },
+    {
+      "name": "Continue as Guest",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Silver sign-in action; primary is distinguished by bold type.",
+      "html": "<button class=\"ds-button-secondary\">Continue as Guest</button>",
+      "css": ".ds-button-secondary{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);background:#c0c0c0;color:var(--ink,#222723);border:0;border-radius:0;min-width:75px;min-height:36px;padding:8px;font-size:11px;font-weight:400;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px white,inset -2px -2px #808080,inset 2px 2px #dfdfdf;cursor:pointer}.ds-button-secondary:hover{color:var(--ink,#222723)}.ds-button-secondary:active{box-shadow:inset -1px -1px white,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px #808080}.ds-button-secondary:focus-visible{outline:2px dotted currentColor;outline-offset:4px;}"
+    },
+    {
+      "name": "Case-study link",
+      "kind": "button",
+      "refersTo": "button-link",
+      "description": "Real navigation with a raised software-button treatment.",
+      "html": "<a class=\"ds-link\" href=\"#project\">Open case study ↗</a>",
+      "css": ".ds-link{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);display:inline-block;background:var(--surface,#c6c6c6);color:var(--ink,#222723);padding:10px 18px;text-decoration:none;font-size:12px;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px white,inset -2px -2px #808080,inset 2px 2px #dfdfdf}.ds-link:hover{color:var(--title,#000080)}.ds-link:active{box-shadow:inset -1px -1px white,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px #808080}.ds-link:focus-visible{outline:2px dotted currentColor;outline-offset:4px;}"
+    },
+    {
+      "name": "Visitor name",
+      "kind": "input",
+      "refersTo": "visitor-input",
+      "description": "Optional personal greeting field.",
+      "html": "<label class=\"ds-field\">What should I call you?<input placeholder=\"Your name (optional)\" maxlength=\"32\" autocomplete=\"given-name\" /></label>",
+      "css": ".ds-field{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);display:block;color:var(--ink,#222723);font-size:11px}.ds-field input{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);display:block;margin-top:7px;width:240px;max-width:100%;height:34px;padding:9px;background:white;color:var(--ink,#222723);border:0;border-radius:0;font-size:12px;box-shadow:inset -1px -1px white,inset 1px 1px #808080,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;caret-color:var(--title,#000080)}.ds-field input:focus-visible{outline:2px solid var(--title,#000080);outline-offset:2px}"
+    },
+    {
+      "name": "Software window",
+      "kind": "custom",
+      "refersTo": "window",
+      "description": "Square frame with active title, paper body and compact status.",
+      "html": "<section class=\"ds-window\"><header class=\"ds-title\"><span>Welcome to DitoOS</span><button aria-label=\"Close welcome\">×</button></header><div class=\"ds-body\">A little window into my world.</div><footer class=\"ds-status\">Ready</footer></section>",
+      "css": ".ds-window{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);width:340px;max-width:100%;background:#c0c0c0;padding:4px;color:var(--ink,#222723);box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px #808080,inset 2px 2px white,var(--window-shadow,8px 12px 25px rgb(0 45 46 / 22%))}.ds-title{display:flex;align-items:center;justify-content:space-between;min-height:29px;padding:5px 4px;background:linear-gradient(90deg,var(--title,#000080),var(--title-end,#087bb3));color:white;font-size:12px;font-weight:700}.ds-title button{background:#c0c0c0;border:0;border-radius:0;width:20px;height:18px;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px white,inset -2px -2px #808080,inset 2px 2px #dfdfdf;cursor:pointer}.ds-title button:hover{color:var(--title,#000080)}.ds-title button:active{box-shadow:inset -1px -1px white,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px #808080}.ds-title button:focus-visible{outline:1px dotted #000;outline-offset:-3px}.ds-body{background:var(--paper,#fffef6);font:700 24px/1.2 Arial,sans-serif;padding:28px}.ds-status{font-size:11px;margin-top:5px;padding:3px 6px;box-shadow:inset -1px -1px white,inset 1px 1px #808080}"
+    },
+    {
+      "name": "Taskbar",
+      "kind": "nav",
+      "refersTo": "taskbar",
+      "description": "Start, active application and sunken time tray.",
+      "html": "<nav class=\"ds-taskbar\" aria-label=\"Desktop taskbar\"><button class=\"ds-start\">Start</button><button class=\"ds-task\">Welcome to DitoOS</button><span class=\"ds-tray\">13:13</span></nav>",
+      "css": ".ds-taskbar{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);display:flex;align-items:center;gap:8px;background:var(--surface,#c6c6c6);height:42px;padding:5px;box-shadow:inset 0 2px #f4f4f4,inset 0 3px #dfdfdf;color:var(--ink,#222723)}.ds-taskbar button{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);background:#c0c0c0;border:0;border-radius:0;height:30px;padding:5px 9px;color:var(--ink,#222723);cursor:pointer;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px white,inset -2px -2px #808080,inset 2px 2px #dfdfdf}.ds-start{font-size:14px;font-weight:bold}.ds-taskbar .ds-task{font-size:11px;font-weight:bold;background:#dfdfdf;box-shadow:inset -1px -1px white,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px #808080}.ds-taskbar button:hover{color:var(--title,#000080)}.ds-taskbar button:active{box-shadow:inset -1px -1px white,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px #808080}.ds-taskbar button:focus-visible{outline:2px dotted currentColor;outline-offset:4px;}.ds-tray{margin-left:auto;font-size:11px;padding:7px 10px;box-shadow:inset -1px -1px white,inset 1px 1px #808080}"
+    },
+    {
+      "name": "Project file",
+      "kind": "card",
+      "refersTo": "reading-surface",
+      "description": "A project entry with pixel artwork, sample label and real-link affordance.",
+      "html": "<a class=\"ds-project\" href=\"#project\"><div class=\"ds-art\"><svg width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path fill=\"#684b15\" d=\"M3 12h17v4h25v27H3z\"/><path fill=\"#fff4a5\" d=\"M5 14h13v4h25v23H5z\"/><path fill=\"#c39127\" d=\"M5 22h38v19H5z\"/><path fill=\"#ffe27b\" d=\"M7 24h34v15H7z\"/><path fill=\"#fff4b6\" d=\"M7 24h34v3H7z\"/><path fill=\"#a8781c\" d=\"M3 41h42v2H3z\"/></svg><small>Sample case study</small></div><strong>DitoOS — a personal workspace</strong><span>From the first idea to the final experience.</span><u>Open case study ↗</u></a>",
+      "css": ".ds-project{display:flex;flex-direction:column;gap:12px;width:260px;max-width:100%;color:var(--ink,#222723);font-family:Arial,Helvetica,sans-serif;text-decoration:none}.ds-art{position:relative;display:flex;align-items:center;justify-content:center;min-height:155px;background:#d9ebe5;border:1px solid #b6cfc4}.ds-art small{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);position:absolute;bottom:9px;left:10px;color:#37564b;font-size:10px}.ds-project strong{font-size:19px;letter-spacing:-.03em}.ds-project>span{font-size:12px;line-height:1.6;color:#555c56}.ds-project u{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);font-size:11px;color:var(--title,#000080)}.ds-project:hover .ds-art{background:#c9e4d9}.ds-project:active .ds-art{background:#c9e4d9}.ds-project:focus-visible{outline:2px dotted currentColor;outline-offset:4px;}"
+    },
+    {
+      "name": "Sign-in chrome",
+      "kind": "custom",
+      "refersTo": "sign-in-card",
+      "description": "Entry palette and silver software card; a visual specimen, not an authentication form.",
+      "html": "<div class=\"ds-entry\"><div class=\"ds-signin\"><header>Welcome to DitoOS</header><div class=\"ds-identity\"><strong>Dito</strong><p>Projects, process, and the person behind them.</p><a href=\"#projects\">Skip to projects ↗</a></div></div></div>",
+      "css": ".ds-entry{background:#073d42;color:#f2f3df;padding:28px}.ds-signin{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);background:#c0c0c0;color:var(--ink,#222723);padding:4px;max-width:420px;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px #808080,inset 2px 2px white,14px 20px 45px rgb(0 20 25 / 28%)}.ds-signin header{background:linear-gradient(90deg,var(--title,#000080),var(--title-end,#087bb3));color:white;padding:5px 7px;font-size:12px;font-weight:bold;min-height:29px}.ds-identity{padding:17px 15px 16px;text-align:center}.ds-identity strong{font:700 24px Arial,sans-serif;letter-spacing:-.03em}.ds-identity p{font-size:10px;color:#424b43;line-height:1.5}.ds-identity a{font-size:11px;color:var(--title,#000080)}.ds-identity a:hover{text-decoration:none}.ds-identity a:focus-visible{outline:2px dotted currentColor;outline-offset:4px;}"
+    },
+    {
+      "name": "Portrait dot surface",
+      "kind": "custom",
+      "refersTo": "portrait-surface",
+      "description": "Self-contained vector dot-field specimen of the portrait treatment. Production uses the supplied photo and Canvas with native-button toggle and reduced-motion photo fallback.",
+      "html": "<figure class=\"ds-portrait\"><button aria-label=\"Portrait reveal visual specimen\"><svg viewBox=\"0 0 180 180\" aria-hidden=\"true\"><defs><pattern id=\"ds-dots\" width=\"5\" height=\"5\" patternUnits=\"userSpaceOnUse\"><circle cx=\"2.5\" cy=\"2.5\" r=\"1.9\" fill=\"#a0c8aa\"/></pattern></defs><rect width=\"180\" height=\"180\" fill=\"#092f35\"/><circle cx=\"90\" cy=\"64\" r=\"35\" fill=\"url(#ds-dots)\"/><path d=\"M27 180v-30q0-45 63-45t63 45v30\" fill=\"url(#ds-dots)\"/></svg><span class=\"ds-corner-a\"></span><span class=\"ds-corner-b\"></span></button><figcaption>Move your pointer to reveal. Click to reveal all.</figcaption></figure>",
+      "css": ".ds-portrait{margin:0;width:220px;max-width:100%}.ds-portrait button{display:block;position:relative;width:100%;padding:0;aspect-ratio:1.16;overflow:hidden;background:#092f35;border:1px solid #4b7275;box-shadow:none;cursor:crosshair}.ds-portrait svg{width:100%;height:100%;display:block}.ds-portrait button:hover,.ds-portrait button:active{box-shadow:none}.ds-portrait button:focus-visible{outline:2px dotted currentColor;outline-offset:4px;color:#092f35}.ds-portrait span{position:absolute;width:18px;height:18px;border-color:#dbefb7;border-style:solid;pointer-events:none}.ds-corner-a{top:10px;left:10px;border-width:1px 0 0 1px}.ds-corner-b{bottom:10px;right:10px;border-width:0 1px 1px 0}.ds-portrait figcaption{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);font-size:10px;line-height:1.5;text-align:center;padding:10px 4px 0;color:#454d47}"
+    },
+    {
+      "name": "Journey category filters",
+      "kind": "chip",
+      "refersTo": "journey-filter",
+      "description": "Square wrapping filters; the selected category is sunken and reports aria-pressed.",
+      "html": "<div class=\"ds-filters\" aria-label=\"Choose a part of the journey\"><button aria-pressed=\"true\">Overview</button><button aria-pressed=\"false\">Education</button><button aria-pressed=\"false\">Experience</button><button aria-pressed=\"false\">Milestones</button></div>",
+      "css": ".ds-filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 28px}.ds-filters button{font-family:var(--font-ui,'Pixelated MS Sans Serif',Arial,sans-serif);min-height:34px;padding:6px 11px;font-size:11px;background:#c0c0c0;color:var(--ink,#222723);border:0;border-radius:0;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px white,inset -2px -2px #808080,inset 2px 2px #dfdfdf;cursor:pointer}.ds-filters button[aria-pressed=true]{background:#e4e9de;box-shadow:inset 1px 1px #333,inset -1px -1px white}.ds-filters button:hover{color:var(--title,#000080)}.ds-filters button:active{box-shadow:inset 1px 1px #333,inset -1px -1px white}.ds-filters button:focus-visible{outline:2px dotted currentColor;outline-offset:4px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Personal Desktop",
+    "overview": "DitoOS treats the portfolio as a personal Windows 95/98 inspired workspace. Teal wallpaper, colored pixel icons, gray beveled software controls and navy-to-blue title bars establish the period identity. Bitmap labels make the interface feel familiar; Verdana gives project narratives a clear, readable voice that fits the era. A darker teal entry ground frames the supplied portrait as a reversible dot field, adding a personal signature within the same software world.\n\nDepth expresses software state: a raised button can be pressed, a title bar identifies the active window, and a sunken field accepts input. Motion guides entry and reveals desktop icons, with a skip path so visitors stay in control.",
+    "keyCharacteristics": [
+      "Teal desktop surrounding warm off-white content.",
+      "Square beveled controls and active blue title bars.",
+      "Original colored pixel artwork on a 48 × 48 grid.",
+      "Bitmap interface labels paired with readable Verdana stories.",
+      "Short motion with reduced-motion support.",
+      "Reversible static-photo dot reveal with keyboard and touch alternatives."
+    ],
+    "rules": [
+      {
+        "name": "The Active Window Rule",
+        "body": "Use the navy-to-blue gradient for the active title bar; inactive windows use the observed gray gradient.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reading Rule",
+        "body": "Use the bitmap face for interface labels and Verdana for narrative content; article copy stays at a maximum of 65ch.",
+        "section": "typography"
+      },
+      {
+        "name": "The Software Depth Rule",
+        "body": "Bevels communicate raised or sunken controls; do not replace them with rounded ambient cards.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Reversible Portrait Rule",
+        "body": "Use the supplied static portrait; preserve tap and keyboard full reveal and the reduced-motion original-photo fallback. No webcam stream or camera permission is implemented.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do keep controls and window chrome square and beveled.",
+      "Do use bitmap UI text for labels and Verdana for extended reading.",
+      "Do preserve readable content and usable controls at mobile widths.",
+      "Do use the original crisp-edged pixel icon family consistently.",
+      "Do keep visible focus and reduced-motion behavior.",
+      "Do preserve touch and keyboard alternatives for the portrait.",
+      "Do keep Canvas work event-driven and pause it when out of view."
+    ],
+    "donts": [
+      "Don't replace the approved desktop world with a modern marketing template.",
+      "Don't apply pixel typography to long project narratives.",
+      "Don't use blur or smooth interpolation on pixel artwork.",
+      "Don't make motion necessary to access content.",
+      "Don't represent the static portrait effect as a live webcam.",
+      "Don't hide Guest entry or the direct path to projects behind the name field."
+    ]
+  }
+}

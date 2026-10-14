@@ -1,0 +1,17 @@
+---
+import PixelIcon from '../ui/PixelIcon.astro';
+import type { AppId, IconName } from '../../data/desktop';
+import type { Locale } from '../../data/copy';
+interface Props {
+  id: AppId;
+  label: string;
+  icon: IconName;
+  locale?: Locale;
+}
+const { id, label, icon, locale = 'id' } = Astro.props;
+---
+
+<button class="desktop-icon" data-open-window={id} aria-controls={`app-${id}`} aria-label={label} lang={locale}>
+  <PixelIcon name={icon} />
+  <span>{label}</span>
+</button>

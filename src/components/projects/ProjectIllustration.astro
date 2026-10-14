@@ -1,0 +1,193 @@
+---
+import { copy, type Locale } from '../../data/copy';
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  project: CollectionEntry<'projects'>;
+  locale: Locale;
+}
+const { project, locale } = Astro.props;
+const artwork = project.data.artwork;
+const captions = {
+  id: {
+    ecesa: 'Alur laporan lapangan sampai pemantauan kontrak',
+    salesone: 'Langkah persiapan membeli rumah dalam satu produk',
+    'spj-vba': 'Formulir, pemeriksaan data, lalu laporan perjalanan dinas',
+    'leave-system': 'Permintaan cuti bergerak melalui alur persetujuan',
+    'company-site': 'Informasi perusahaan mengarah ke layanan dan kontak',
+    'property-listing':
+      'Listing properti menghubungkan pencarian dengan pertanyaan pembeli',
+    serocoffee:
+      'Satu halaman mengatur kesan, cerita produk, dan ajakan berikutnya',
+    coffeespace: 'Identitas brand diterjemahkan ke halaman dan interaksi',
+  },
+  en: {
+    ecesa: 'Field reports move into contract monitoring',
+    salesone: 'Home-buying preparation steps in one product',
+    'spj-vba': 'A form, checked data, then a travel expense report',
+    'leave-system': 'A leave request moves through an approval flow',
+    'company-site': 'Company information leads to services and contact',
+    'property-listing':
+      'Property listings connect discovery with buyer inquiries',
+    serocoffee:
+      'One page shapes the first impression, product story, and next action',
+    coffeespace: 'A brand identity becomes a page and a set of interactions',
+  },
+} as const;
+const flows = {
+  ecesa: {
+    id: [
+      ['01', 'Petugas lapangan'],
+      ['02', 'Laporan terstruktur'],
+      ['03', 'Dashboard kontrak'],
+    ],
+    en: [
+      ['01', 'Field staff'],
+      ['02', 'Structured report'],
+      ['03', 'Contract dashboard'],
+    ],
+  },
+  salesone: {
+    id: [
+      ['01', 'Rencana'],
+      ['02', 'Simulasi KPR'],
+      ['03', 'Inspeksi'],
+      ['04', 'Renovasi'],
+    ],
+    en: [
+      ['01', 'Plan'],
+      ['02', 'Mortgage'],
+      ['03', 'Inspect'],
+      ['04', 'Renovate'],
+    ],
+  },
+  'spj-vba': {
+    id: [
+      ['01', 'Form input'],
+      ['02', 'Validasi'],
+      ['03', 'Laporan SPJ'],
+    ],
+    en: [
+      ['01', 'Input form'],
+      ['02', 'Validation'],
+      ['03', 'SPJ report'],
+    ],
+  },
+  'leave-system': {
+    id: [
+      ['01', 'Ajukan cuti'],
+      ['02', 'Tinjau atasan'],
+      ['03', 'Keputusan'],
+    ],
+    en: [
+      ['01', 'Request leave'],
+      ['02', 'Manager review'],
+      ['03', 'Decision'],
+    ],
+  },
+  'company-site': {
+    id: [
+      ['01', 'Profil'],
+      ['02', 'Layanan'],
+      ['03', 'Hubungi'],
+    ],
+    en: [
+      ['01', 'Profile'],
+      ['02', 'Services'],
+      ['03', 'Contact'],
+    ],
+  },
+  'property-listing': {
+    id: [
+      ['01', 'Jelajahi'],
+      ['02', 'Lihat listing'],
+      ['03', 'Tanya properti'],
+    ],
+    en: [
+      ['01', 'Discover'],
+      ['02', 'View listing'],
+      ['03', 'Ask about a home'],
+    ],
+  },
+  serocoffee: {
+    id: [
+      ['01', 'Kesan awal'],
+      ['02', 'Cerita kopi'],
+      ['03', 'Pesan / kunjungi'],
+    ],
+    en: [
+      ['01', 'First impression'],
+      ['02', 'Coffee story'],
+      ['03', 'Order / visit'],
+    ],
+  },
+  coffeespace: {
+    id: [
+      ['01', 'Identitas brand'],
+      ['02', 'Temukan menu'],
+      ['03', 'Jelajahi lebih jauh'],
+    ],
+    en: [
+      ['01', 'Brand identity'],
+      ['02', 'Discover the menu'],
+      ['03', 'Explore further'],
+    ],
+  },
+} as const;
+const t = copy[locale].case;
+const nodes = flows[artwork][locale];
+---
+
+<figure
+  class:list={['project-illustration', `illustration-${artwork}`]}
+  aria-label={`${t.illustration}: ${captions[locale][artwork]}`}
+>
+  <div class="illustration-window" aria-hidden="true">
+    <div class="illustration-titlebar">
+      <span class="illustration-dots">● ● ●</span>
+      <span>{project.data.projectSlug.toUpperCase()} / FLOW MAP</span>
+    </div>
+    <div
+      class="illustration-flow"
+      class:list={{ 'is-four-step': nodes.length === 4 }}
+    >
+      {nodes.map(([number, label], index) => (
+        <div class="illustration-step">
+          <span class="illustration-step-number">{number}</span>
+          <span class="illustration-node" data-step={index + 1}>
+            <span class="node-mark" aria-hidden="true">
+              {artwork === 'ecesa'
+                ? '▦'
+                : artwork === 'salesone'
+                  ? '⌂'
+                  : artwork === 'spj-vba'
+                    ? '▤'
+                    : artwork === 'leave-system'
+                      ? '✓'
+                      : artwork === 'property-listing'
+                        ? '⌕'
+                        : artwork === 'serocoffee'
+                          ? '◉'
+                          : artwork === 'coffeespace'
+                            ? '✳'
+                            : '▣'}
+            </span>
+            <strong>{label}</strong>
+          </span>
+          {index < nodes.length - 1 && (
+            <span class="illustration-connector" aria-hidden="true">
+              →
+            </span>
+          )}
+        </div>
+      ))}
+    </div>
+    {project.data.highlight && (
+      <div class="illustration-proof">{project.data.highlight}</div>
+    )}
+    <div class="illustration-gridline" aria-hidden="true"></div>
+  </div>
+  <figcaption>
+    <strong>{captions[locale][artwork]}</strong>
+    <span>{t.illustrationNote}</span>
+  </figcaption>
+</figure>

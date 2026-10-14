@@ -1,0 +1,18 @@
+---
+import PixelIcon from '../ui/PixelIcon.astro';
+import { copy, type Locale } from '../../data/copy';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale].experiments;
+---
+
+<article class="text-document contact-document">
+  <PixelIcon name="bin" size={88} />
+  <h2>{t.title}</h2>
+  <p>{t.intro}</p>
+  <div class="empty-state">
+    <strong>{t.emptyTitle}</strong>
+    <p>{t.emptyBody}</p>
+  </div>
+  <button data-open-window="projects">{t.projects}</button>
+</article>

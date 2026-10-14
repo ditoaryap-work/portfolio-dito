@@ -1,0 +1,69 @@
+---
+import PixelIcon from './PixelIcon.astro';
+import type { IconName, WindowId } from '../../data/desktop';
+import { copy, type Locale } from '../../data/copy';
+interface Props {
+  id: WindowId;
+  title: string;
+  icon?: IconName;
+  class?: string;
+  open?: boolean;
+  locale?: Locale;
+}
+const {
+  id,
+  title,
+  icon = 'folder',
+  class: className = '',
+  open = false,
+  locale = 'id',
+} = Astro.props;
+const ready = copy[locale].desktop.ready;
+const action = locale === 'id'
+  ? { minimize: 'Minimalkan', maximize: 'Maksimalkan', restore: 'Pulihkan', close: 'Tutup' }
+  : { minimize: 'Minimize', maximize: 'Maximize', restore: 'Restore', close: 'Close' };
+---
+
+<section
+  id={`app-${id}`}
+  class:list={['window', 'os-window', className]}
+  data-window={id}
+  hidden={!open}
+  tabindex="-1"
+  aria-labelledby={`${id}-title`}
+>
+  <header class="title-bar" data-drag-handle>
+    <div class="title-bar-text" id={`${id}-title`}>
+      <PixelIcon name={icon} size={18} />
+      <span>{title}</span>
+    </div>
+    <div class="title-bar-controls">
+      <button
+        class="minimize"
+        aria-label={`${action.minimize} ${title}`}
+        data-window-action="minimize"
+      ></button>
+      <button
+        class="maximize"
+        aria-label={`${action.maximize} ${title}`}
+        data-maximize-label={action.maximize}
+        data-restore-label={action.restore}
+        data-window-action="maximize"
+      ></button>
+      <button
+        class="close"
+        aria-label={`${action.close} ${title}`}
+        data-window-action="close"
+      ></button>
+    </div>
+  </header>
+  <div class="window-body">
+    <slot />
+  </div>
+  <footer class="status-bar">
+    <p class="status-bar-field" data-window-status>
+      {ready}
+    </p>
+    <p class="status-bar-field">DitoOS</p>
+  </footer>
+</section>

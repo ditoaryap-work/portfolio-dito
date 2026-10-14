@@ -1,0 +1,75 @@
+---
+import { copy, type Locale } from '../../data/copy';
+import '../../styles/boot.css';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = copy[locale].boot;
+---
+
+<div
+  class="boot-screen"
+  id="boot-screen"
+  hidden
+  aria-labelledby="boot-title"
+  data-boot-ready={t.ready}
+>
+  <section class="boot-window window">
+    <header class="title-bar">
+      <div class="title-bar-text">
+        <span aria-hidden="true">▣</span> {t.title}
+      </div>
+      <div class="title-bar-controls">
+        <button class="close" data-boot-skip aria-label={t.skip}></button>
+      </div>
+    </header>
+    <div class="boot-content">
+      <div class="boot-heading-row">
+        <span class="boot-mark" aria-hidden="true">
+          D<span>OS</span>
+        </span>
+        <div>
+          <p class="boot-kicker">DitoOS / 98</p>
+          <h2 id="boot-title">{t.heading}</h2>
+          <p>{t.description}</p>
+        </div>
+      </div>
+      <ol class="boot-steps" aria-atomic="false">
+        {t.steps.map((step, index) => (
+          <li data-boot-step={index} data-boot-label={step}>
+            {step}
+          </li>
+        ))}
+      </ol>
+      <p
+        class="boot-live-status"
+        data-boot-status
+        role="status"
+        aria-live="polite"
+      ></p>
+      <div
+        class="boot-progress"
+        role="progressbar"
+        aria-label={t.progress}
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+      >
+        <span></span>
+      </div>
+      <div class="boot-footer">
+        <span data-boot-caption>{t.caption}</span>
+        <div class="boot-actions">
+          <button type="button" data-boot-skip>
+            {t.skip}
+          </button>
+          <button type="button" data-boot-enter hidden>
+            <span>{t.enter}</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

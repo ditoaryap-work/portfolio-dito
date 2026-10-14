@@ -1,0 +1,35 @@
+---
+import type { IconName } from '../../data/desktop';
+interface Props {
+  name: IconName;
+  size?: number;
+}
+const { name, size = 48 } = Astro.props;
+// Original pixel artwork, built on a 48 × 48 grid. No Microsoft assets are used.
+const artwork: Record<IconName, string> = {
+  folder:
+    '<path fill="#684b15" d="M3 12h17v4h25v27H3z"/><path fill="#fff4a5" d="M5 14h13v4h25v23H5z"/><path fill="#c39127" d="M5 22h38v19H5z"/><path fill="#ffe27b" d="M7 24h34v15H7z"/><path fill="#fff4b6" d="M7 24h34v3H7z"/><path fill="#a8781c" d="M3 41h42v2H3z"/>',
+  computer:
+    '<path fill="#252525" d="M6 3h34v28H6zM19 31h9v5H19zM5 37h37v8H5z"/><path fill="#f5f3df" d="M8 5h30v24H8zM7 39h33v4H7z"/><path fill="#77766c" d="M11 8h24v18H11zM9 41h22v2H9z"/><path fill="#117d80" d="M13 10h20v14H13z"/><path fill="#80d1be" d="M15 12h4v2h-2v6h-2z"/><path fill="#8b8a7e" d="M11 27h24v2H11zM20 33h7v4h-7z"/><path fill="#67a251" d="M35 40h3v2h-3z"/>',
+  journal:
+    '<path fill="#302f3b" d="M9 4h29v40H9z"/><path fill="#7b8bb9" d="M11 6h25v36H11z"/><path fill="#b4c4e4" d="M15 6h21v32H15z"/><path fill="#f6f1dc" d="M17 10h15v21H17zM15 38h21v4H15z"/><path fill="#5c638b" d="M20 14h9v2h-9zM20 19h9v2h-9zM20 24h6v2h-6z"/><path fill="#34374b" d="M8 10h6v2H8zM8 19h6v2H8zM8 28h6v2H8zM8 37h6v2H8z"/>',
+  mail: '<path fill="#555043" d="M3 12h42v29H3z"/><path fill="#fffbdf" d="M5 14h38v25H5z"/><path fill="#c9b985" d="M5 15h3v3h3v3h3v3h3v3h3v3h8v-3h3v-3h3v-3h3v-3h3v-3h3v4h-3v3h-3v3h-3v3h-3v3H18v-3h-3v-3h-3v-3H9v-3H5z"/><path fill="#e4d8ae" d="M5 36h3v-3h3v-3h3v-3h3v3h-3v3h-3v3H8v3H5zM31 27h3v3h3v3h3v3h3v3h-3v-3h-3v-3h-3v-3h-3z"/>',
+  bin: '<path fill="#424742" d="M11 11h27v5H11zM14 16h21v28H14zM19 7h11v4H19z"/><path fill="#e4e8de" d="M13 12h23v3H13zM16 17h17v25H16z"/><path fill="#8c9e93" d="M18 19h2v20h-2zM23 19h2v20h-2zM28 19h2v20h-2z"/><path fill="#fafff5" d="M16 17h3v25h-3z"/>',
+  spark:
+    '<path fill="#142f48" d="M21 3h6v12h6v6h12v6H33v6h-6v12h-6V33h-6v-6H3v-6h12v-6h6z"/><path fill="#ffdd72" d="M23 9h2v10h6v4h10v2H31v4h-6v10h-2V29h-6v-4H7v-2h10v-4h6z"/>',
+  sound:
+    '<path fill="#363b3b" d="M7 19h9l11-9v28l-11-9H7zM32 16h3v5h3v6h-3v5h-3v-6h3v-4h-3z"/><path fill="#f4f0db" d="M9 21h8l8-7v20l-8-7H9z"/>',
+};
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 48 48"
+  fill="none"
+  aria-hidden="true"
+  class="pixel-icon"
+  shape-rendering="crispEdges"
+>
+  <Fragment set:html={artwork[name]} />
+</svg>

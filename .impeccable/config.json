@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "createdAt": "2026-10-14T06:51:03.604Z",
+        "reason": "Agent: Arial intentionally supports the user-approved Windows 95/98 desktop direction and readable project narratives; recorded in DESIGN.md and reviewed as a period-appropriate choice."
+      }
+    ]
+  }
+}

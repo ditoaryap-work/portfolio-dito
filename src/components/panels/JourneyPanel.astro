@@ -1,0 +1,67 @@
+---
+import { journeyEntries, journeyCategories } from '../../data/journey';
+import { copy, getProjectPath, type Locale } from '../../data/copy';
+import { journeyText } from '../../data/journey';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = copy[locale].journey;
+---
+
+<article class="text-document" data-journey>
+  <h2>
+    {t.headlineFirst}
+    <br />
+    {t.headlineSecond}
+  </h2>
+  <p>{t.intro}</p>
+  <div class="journey-filters" role="group" aria-label={t.filterLabel}>
+    <button data-journey-filter="all" aria-pressed="true">
+      {t.overview}
+    </button>
+    {journeyCategories.map((category) => (
+      <button data-journey-filter={category.id} aria-pressed="false">
+        {t.categories[category.key]}
+      </button>
+    ))}
+  </div>
+  <div data-journey-content>
+    {journeyCategories.map((category) => {
+      const entries = journeyEntries.filter(
+        (entry) => entry.category === category.id,
+      );
+      return (
+        <section class="journey-group" data-journey-group={category.id}>
+          <h3>{t.categories[category.key]}</h3>
+          <p>{t.descriptions[category.key]}</p>
+          {entries.length ? (
+            entries.map((entry) => {
+              const item = journeyText(entry, locale);
+              return (
+                <article class="journey-record">
+                  <time>{entry.period}</time>
+                  <h4>{item.title}</h4>
+                  {item.place && <strong>{item.place}</strong>}
+                  <p>{item.description}</p>
+                  {entry.projectSlug && (
+                    <a href={getProjectPath(locale, entry.projectSlug)}>
+                      {t.related} ↗
+                    </a>
+                  )}
+                </article>
+              );
+            })
+          ) : (
+            <p class="journey-pending">—</p>
+          )}
+        </section>
+      );
+    })}
+  </div>
+  <div class="document-note">
+    <strong>{t.projectCta}</strong>
+    <p>{t.projectCtaBody}</p>
+    <button data-open-window="projects">{t.openProjects}</button>
+  </div>
+</article>

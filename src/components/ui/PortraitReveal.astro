@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../../assets/dito-portrait.png';
+import '../../styles/portrait.css';
+import type { Locale } from '../../data/copy';
+interface Props {
+  compact?: boolean;
+  eager?: boolean;
+  locale?: Locale;
+}
+const { compact = false, eager = false, locale = 'id' } = Astro.props;
+---
+
+<figure
+  class:list={['portrait-reveal', { 'is-compact': compact }]}
+  data-portrait
+>
+  <button
+    type="button"
+    class="portrait-surface"
+    data-portrait-surface
+    aria-label={locale === 'id' ? 'Perlihatkan foto Dito' : 'Reveal photo of Dito'}
+    aria-pressed="false"
+  >
+    <Image
+      src={portrait}
+      alt={locale === 'id' ? 'Foto Dito berkacamata dan mengenakan kemeja biru tua' : 'Portrait of Dito wearing glasses and a navy shirt'}
+      width={640}
+      height={640}
+      format="webp"
+      quality={82}
+      loading={eager ? 'eager' : 'lazy'}
+      fetchpriority={eager ? 'high' : 'auto'}
+      draggable="false"
+    />
+    <canvas aria-hidden="true"></canvas>
+    <span class="portrait-corner corner-tl" aria-hidden="true"></span>
+    <span class="portrait-corner corner-br" aria-hidden="true"></span>
+  </button>
+  <figcaption>
+    <span class="portrait-hint-pointer">
+      {locale === 'id' ? 'Arahkan pointer untuk membuka. Klik untuk melihat foto utuh.' : 'Move your pointer to reveal. Click to reveal all.'}
+    </span>
+    <span class="portrait-hint-touch">
+      {locale === 'id' ? 'Ketuk foto untuk melihatnya utuh.' : 'Tap the portrait to reveal the photo.'}
+    </span>
+  </figcaption>
+</figure>

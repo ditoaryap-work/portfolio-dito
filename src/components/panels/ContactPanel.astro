@@ -1,0 +1,22 @@
+---
+import { site } from '../../data/site';
+import PixelIcon from '../ui/PixelIcon.astro';
+import { copy, type Locale } from '../../data/copy';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale].contact;
+---
+
+<article class="text-document contact-document">
+  <PixelIcon name="mail" size={88} />
+  <h2>{t.headlineFirst}<br />{t.headlineSecond}</h2>
+  <p>{t.intro}</p>
+  <p class="contact-status">{t.workTogether}</p>
+  <p>{t.location}</p>
+  <div class="contact-links">
+    <a class="button-link" href={`mailto:${site.email}`}>{t.email} ↗</a>
+    <a href={site.linkedin} target="_blank" rel="noreferrer">{t.linkedin} ↗</a>
+    <a href={site.github} target="_blank" rel="noreferrer">{t.github} ↗</a>
+    <a href={site.website} target="_blank" rel="noreferrer">{t.website} ↗</a>
+  </div>
+</article>

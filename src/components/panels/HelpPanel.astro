@@ -1,0 +1,36 @@
+---
+import { copy, type Locale } from '../../data/copy';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = copy[locale].help;
+---
+
+<article class="text-document">
+  <h2>{t.title}</h2>
+  <p>{t.intro}</p>
+  <ul class="help-list">
+    <li>
+      <strong>{t.open}</strong>
+      {t.openBody}
+    </li>
+    <li>
+      <strong>{t.windows}</strong>
+      {t.windowsBody}
+    </li>
+    <li>
+      <strong>{t.read}</strong>
+      {t.readBody}
+    </li>
+    <li>
+      <strong>{t.language}</strong>
+      {t.languageBody}
+    </li>
+    <li>
+      <strong>{t.touch}</strong>
+      {t.touchBody}
+    </li>
+  </ul>
+  <button data-open-window="projects">{t.goProjects}</button>
+</article>

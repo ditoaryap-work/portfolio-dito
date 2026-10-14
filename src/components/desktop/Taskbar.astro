@@ -1,0 +1,78 @@
+---
+import { apps } from '../../data/desktop';
+import PixelIcon from '../ui/PixelIcon.astro';
+import { copy, type Locale } from '../../data/copy';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale];
+---
+
+<nav class="taskbar" aria-label={t.desktop.taskbar}>
+  <button
+    id="start-button"
+    class="start-button"
+    aria-expanded="false"
+    aria-controls="start-menu"
+  >
+    <span class="start-mark" aria-hidden="true">
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+    </span>
+    <strong>{t.desktop.start}</strong>
+  </button>
+  <div class="taskbar-divider"></div>
+  <div class="taskbar-windows" aria-label={t.desktop.openWindows}>
+    <button class="task-button is-active" data-task="welcome" aria-label={t.windows.welcome}>
+      <PixelIcon name="computer" size={20} />
+      <span>{t.windows.welcome}</span>
+    </button>
+    {apps.map((app) => (
+      <button class="task-button" data-task={app.id} hidden>
+        <PixelIcon name={app.icon} size={20} />
+        <span>{t.appLabels[app.id]}</span>
+      </button>
+    ))}
+  </div>
+  <div class="system-tray">
+    <span
+      class="tray-status"
+      title={t.desktop.personalWorkspace}
+      aria-label={t.desktop.personalWorkspace}
+    >
+      <PixelIcon name="computer" size={22} />
+    </span>
+    <div class="taskbar-locale" aria-label={t.language.label}>
+      <a href="/" lang="id" aria-current={locale === 'id' ? 'page' : undefined}>ID</a>
+      <span aria-hidden="true">/</span>
+      <a href="/en/" lang="en" aria-current={locale === 'en' ? 'page' : undefined}>EN</a>
+    </div>
+    <time id="desktop-clock" aria-label={t.desktop.localTime}>
+      --:--
+    </time>
+  </div>
+</nav>
+<div class="start-menu window" id="start-menu" hidden>
+  <div class="start-brand">
+    Dito<span>OS</span>
+  </div>
+  <div class="start-items">
+    <p>{t.desktop.makeHome}</p>
+    {apps.map((app) => (
+      <button data-open-window={app.id}>
+        <PixelIcon name={app.icon} size={30} />
+        <span>{t.appLabels[app.id]}</span>
+      </button>
+    ))}
+    <hr />
+    <button data-open-window="welcome">
+      <PixelIcon name="computer" size={30} />
+      <span>{t.desktop.welcomeScreen}</span>
+    </button>
+    <button id="restart-button">
+      <PixelIcon name="spark" size={30} />
+      <span>{t.desktop.restart}</span>
+    </button>
+  </div>
+</div>

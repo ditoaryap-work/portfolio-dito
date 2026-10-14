@@ -1,0 +1,78 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../../data/copy';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  locale: Locale;
+}
+
+const { project, locale } = Astro.props;
+const slug = project.data.projectSlug;
+const capturedSites = new Set([
+  'ecesa',
+  'salesone',
+  'serocoffee',
+  'coffeespace',
+]);
+const hasSitePreview = capturedSites.has(slug);
+const fallbackFlows = {
+  id: {
+    'spj-vba': ['Form Excel', 'Validasi data', 'Laporan SPJ'],
+    'leave-system': ['Pengajuan cuti', 'Persetujuan', 'Status tercatat'],
+    adpm: ['Kebutuhan bisnis', 'Website perusahaan', 'Layanan & kontak'],
+    'ruko-persada': ['Pilih unit', 'Lihat detail', 'Hubungi admin'],
+  },
+  en: {
+    'spj-vba': ['Excel form', 'Data checks', 'SPJ report'],
+    'leave-system': ['Leave request', 'Approval', 'Status recorded'],
+    adpm: ['Business needs', 'Company website', 'Services & contact'],
+    'ruko-persada': ['Choose a unit', 'Review details', 'Contact the team'],
+  },
+} as const;
+const defaultStages = {
+  id: ['Kebutuhan awal', 'Solusi yang dibangun', 'Hasil proyek'],
+  en: ['Starting need', 'Solution built', 'Project outcome'],
+}[locale];
+const stages =
+  fallbackFlows[locale][slug as keyof (typeof fallbackFlows)[typeof locale]] ??
+  defaultStages;
+const labels = {
+  id: { site: 'Pratinjau situs', flow: 'Diagram proses' },
+  en: { site: 'Site preview', flow: 'Process diagram' },
+}[locale];
+---
+
+<div class="project-file-art" data-project-preview={slug} aria-hidden="true">
+  {hasSitePreview ? (
+    <>
+      <img
+        class="project-preview-pixel"
+        src={`/project-previews/${slug}-pixel.jpg`}
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+      <img
+        class="project-preview-full"
+        src={`/project-previews/${slug}.jpg`}
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
+    </>
+  ) : (
+    <div class="project-preview-flow">
+      {stages?.map((stage, index) => (
+        <span class="project-preview-stage">
+          <small>{String(index + 1).padStart(2, '0')}</small>
+          <strong>{stage}</strong>
+        </span>
+      ))}
+    </div>
+  )}
+  <span class="project-preview-label">
+    {hasSitePreview ? labels.site : labels.flow}
+  </span>
+  <span class="file-stamp">{project.data.kind}</span>
+</div>

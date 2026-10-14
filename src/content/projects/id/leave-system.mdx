@@ -1,0 +1,41 @@
+---
+projectSlug: leave-system
+locale: id
+order: 4
+title: Sistem informasi cuti pertanian
+summary: Aplikasi web untuk mengajukan dan menyetujui cuti staf melalui satu alur digital.
+description: Cerita membangun sistem informasi cuti staf dengan alur pengajuan dan persetujuan berbasis web.
+kind: Sistem internal · HR
+role: Pengembangan full-stack
+status: Alur pengajuan dan persetujuan dibuat
+tools: [Next.js, Prisma, PostgreSQL, Tailwind CSS]
+artwork: leave-system
+highlight: Pengajuan → pemeriksaan → keputusan
+siteUrl: https://sisteminformasicutipertanian.com/
+---
+
+## Konteks dan tujuan
+
+Proyek ini berfokus pada alur pengajuan cuti staf dan persetujuannya. Tujuannya adalah membuat tahap pengajuan dan keputusan tersedia dalam satu sistem web.
+
+Catatan proyek belum menjelaskan alur sebelumnya atau kendala tiap pihak. Uraian ini berfokus pada fungsi sistem yang memang tercatat.
+
+## Yang dibangun
+
+Aplikasi ini menyediakan alur permohonan cuti dan persetujuan. Implementasinya menggunakan Next.js, Prisma, PostgreSQL, dan Tailwind CSS.
+
+## Peran dan keputusan
+
+Saya mengembangkan aplikasi full-stack dari antarmuka hingga integrasi basis data. Struktur form dan layar persetujuan mengikuti dua tahap utama alur: membuat permintaan dan meninjau keputusan.
+
+## Hasil dan dampak
+
+Hasil yang terdokumentasi adalah tersedianya sistem web untuk mengelola pengajuan dan persetujuan cuti. Jumlah staf pengguna, lama proses persetujuan, dan perubahan beban administrasi belum tercatat.
+
+## Trade-off dan hal yang perlu diukur
+
+Alur yang ringkas memudahkan pengajuan, tetapi aplikasi HR perlu menjaga status permintaan tetap jelas bagi staf dan peninjau. Ukuran berikutnya yang berguna adalah waktu sampai keputusan, jumlah permintaan yang perlu diperbaiki, dan apakah riwayat keputusan dapat ditelusuri.
+
+## Pelajaran dari proyek ini
+
+Sistem internal sebaiknya memperlihatkan langkah berikutnya bagi setiap peran. Untuk versi lanjutan, saya akan menilai alur staf dan peninjau secara terpisah agar status yang sama tidak ditafsirkan berbeda.

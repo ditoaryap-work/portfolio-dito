@@ -1,0 +1,18 @@
+:root {
+  --desktop: #087f80;
+  --desktop-deep: #05686a;
+  --desktop-ink: #064f51;
+  --surface: #c6c6c6;
+  --paper: #fffef6;
+  --ink: #222723;
+  --muted: #5b5f5b;
+  --title: #000080;
+  --title-end: #087bb3;
+  --highlight: #fff;
+  --shadow: #808080;
+  --note: #fff1a6;
+  --taskbar-height: 42px;
+  --font-ui: 'Pixelated MS Sans Serif', Arial, sans-serif;
+  --font-reading: Verdana, Geneva, sans-serif;
+  --window-shadow: 8px 12px 25px rgb(0 45 46 / 22%);
+}

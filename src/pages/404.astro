@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PixelIcon from '../components/ui/PixelIcon.astro';
+---
+
+<BaseLayout title="File not found | DitoOS">
+  <main class="not-found window">
+    <header class="title-bar">
+      <div class="title-bar-text">DitoOS</div>
+    </header>
+    <div class="window-body">
+      <PixelIcon name="folder" size={70} />
+      <h1>File ini tidak ketemu.</h1>
+      <p>Halaman ini mungkin sudah dipindahkan atau alamatnya salah.</p>
+      <h2>This file wandered off.</h2>
+      <p>This page may have moved, or its address may be incorrect.</p>
+      <div class="not-found-actions">
+        <a class="button-link" href="/">
+          Desktop · ID
+        </a>
+        <a class="button-link" href="/en/">
+          Desktop · EN
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+<style>
+  .not-found {
+    width: min(440px, calc(100% - 32px));
+    margin: 15vh auto 0;
+  }
+  .window-body {
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .not-found-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  h1 {
+    font-family: var(--font-reading);
+    font-size: 30px;
+    line-height: 1.2;
+    margin-top: 20px;
+  }
+  p {
+    font-family: var(--font-reading);
+    font-size: 14px;
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import PixelIcon from '../ui/PixelIcon.astro';
+import PortraitReveal from '../ui/PortraitReveal.astro';
+import { copy, type Locale } from '../../data/copy';
+import { site } from '../../data/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale].about;
+---
+
+<article class="text-document about-document">
+  <PortraitReveal compact locale={locale} />
+  <div class="document-heading">
+    <PixelIcon name="computer" size={64} />
+    <h2>{t.heading}</h2>
+  </div>
+  <p>{t.intro}</p>
+  <h3>{t.now}</h3>
+  <p>{t.nowBody}</p>
+  <h3>{t.approach}</h3>
+  <p>{t.approachBody}</p>
+  <h3>{t.skills}</h3>
+  <ul class="skill-list">{site.skills.map((skill) => <li>{skill}</li>)}</ul>
+  <div class="document-note">
+    <strong>{site.role[locale]}</strong>
+    <p>{site.location} · {site.email}</p>
+    <div class="about-links">
+      <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      <a href={site.github} target="_blank" rel="noreferrer">GitHub ↗</a>
+      <a href={site.website} target="_blank" rel="noreferrer">{locale === 'id' ? 'Website' : 'Website'} ↗</a>
+    </div>
+  </div>
+  <button data-open-window="projects">{t.explore}</button>
+  <button data-open-window="contact">{t.contact}</button>
+</article>

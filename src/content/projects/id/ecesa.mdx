@@ -1,0 +1,52 @@
+---
+projectSlug: ecesa
+locale: id
+order: 1
+title: ecesa.id
+summary: Sistem pelaporan lapangan untuk 24 provinsi, dengan input langsung dari petugas dan pemantauan progres per kontrak.
+description: 'Cerita pembangunan ecesa.id: dari alur spreadsheet dan kebutuhan petugas lapangan sampai sistem pelaporan terpusat.'
+kind: Sistem pelaporan lapangan
+role: Staf teknis · pengembangan sistem
+year: 2026–sekarang
+status: Input lapangan dimulai Agustus 2026
+tools: [Next.js, NestJS, Drizzle ORM]
+artwork: ecesa
+highlight: 24 provinsi · 14.000+ laporan kumulatif
+siteUrl: https://ecesa.id/
+---
+
+## Konteks dan tujuan
+
+Sebelum ecesa.id, tim internal menerima data dari petugas lapangan lalu memasukkannya ke Google Sheets. Alur itu menambah satu tahap pemindahan data. Pengisian lokasi juga sempat memakai input spasial berbasis poligon.
+
+Tujuannya adalah memberi petugas jalur input langsung dan membuat progres pekerjaan lebih mudah dipantau per kontrak. Karena laporan dipakai untuk kegiatan lintas wilayah, sistem juga perlu menyimpan foto, informasi lokasi, dan alasan ketika tidak ada pekerjaan pada periode tertentu.
+
+## Yang dibangun
+
+ecesa.id adalah aplikasi pelaporan dengan Next.js, NestJS, dan Drizzle ORM. Aplikasi ini memakai role-based access control untuk membatasi akses berdasarkan peran dan menyediakan dashboard progres per kontrak.
+
+Form laporan mendukung foto, informasi lokasi, dan keterangan periode tanpa kegiatan. Setelah melihat masukan pengguna, alur input lokasi disederhanakan dari poligon menjadi isian tabel.
+
+## Peran dan keputusan
+
+Saya mengembangkan sistem ini sebagai bagian dari pekerjaan teknis di Kementerian Pertanian. Tanggung jawab saya mencakup menerjemahkan masukan pengguna menjadi alur, deployment, troubleshooting, pemeliharaan, dan peningkatan aplikasi dengan bantuan AI.
+
+Keputusan pentingnya adalah menyederhanakan titik input: petugas mengisi laporan di lapangan, sedangkan tim pusat memantau status dan progres melalui dashboard. Perubahan bentuk input lokasi juga mengutamakan kemudahan pengisian untuk alur kerja yang sedang dipakai.
+
+## Hasil dan dampak
+
+Sistem ini mendukung pelaporan dari 24 provinsi. Dalam catatan terbaru, terdapat lebih dari 14.000 laporan harian kumulatif. Jumlah itu mencakup data historis yang dimasukkan saat migrasi, bukan hanya laporan setelah peluncuran. Petugas lapangan mulai mengisi laporan pada Agustus 2026.
+
+Catatan foto, lokasi, dan alasan periode tanpa kegiatan membantu pemantauan serta pencarian dokumen untuk kemungkinan pemeriksaan BPK. Ini adalah dukungan terhadap proses audit, bukan klaim bahwa audit tertentu sudah dilakukan.
+
+## Trade-off dan hal yang perlu diukur
+
+Input langsung mengurangi perpindahan data lewat tim pusat, tetapi membuat kejelasan form dan panduan bagi petugas semakin penting. Langkah berikutnya adalah mengukur kelengkapan laporan, waktu pengisian, serta jumlah koreksi per kontrak sebelum menyimpulkan perbandingannya dengan alur lama.
+
+Dukungan saat koneksi lapangan terbatas belum tercatat. Kemampuan offline perlu diuji bersama petugas sebelum dicantumkan sebagai fitur.
+
+## Pelajaran dari proyek ini
+
+Perubahan yang paling terasa bukan menambah lebih banyak field, tetapi menyesuaikan input dengan pekerjaan yang benar-benar dilakukan. Respons terhadap masukan pengguna mengubah input poligon menjadi tabel yang lebih sederhana.
+
+Sistem operasional juga perlu dipikirkan setelah kode selesai: akses, deployment, dukungan harian, dan cara menemukan kembali catatan saat dibutuhkan.

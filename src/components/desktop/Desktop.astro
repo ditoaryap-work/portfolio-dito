@@ -1,0 +1,133 @@
+---
+import { apps } from '../../data/desktop';
+import { copy, type Locale } from '../../data/copy';
+import DesktopIcon from './DesktopIcon.astro';
+import Taskbar from './Taskbar.astro';
+import Window from '../ui/Window.astro';
+import WelcomePanel from '../panels/WelcomePanel.astro';
+import ProjectsPanel from '../panels/ProjectsPanel.astro';
+import AboutPanel from '../panels/AboutPanel.astro';
+import JourneyPanel from '../panels/JourneyPanel.astro';
+import ContactPanel from '../panels/ContactPanel.astro';
+import ExperimentsPanel from '../panels/ExperimentsPanel.astro';
+import HelpPanel from '../panels/HelpPanel.astro';
+import LoginScreen from './LoginScreen.astro';
+import BootScreen from './BootScreen.astro';
+import '../../styles/desktop.css';
+import '../../styles/panels.css';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale];
+const localizedApps = apps.map((app) => ({ ...app, label: t.appLabels[app.id] }));
+---
+
+<a href={locale === 'en' ? '/en/projects/ecesa/' : '/projects/ecesa/'} class="skip-link">
+  {t.desktop.skipLabel}
+</a>
+<LoginScreen locale={locale} />
+<div id="workspace" inert>
+  <main class="desktop" id="desktop" aria-label={t.desktop.ariaLabel}>
+    <nav class="desktop-icons" aria-label={t.desktop.explore}>
+      {localizedApps.map((app) => (
+        <DesktopIcon {...app} locale={locale} />
+      ))}
+    </nav>
+    <div class="wallpaper-wordmark" aria-hidden="true">
+      <span>dito</span>
+      <span class="wordmark-os">
+        OS<span class="wordmark-star">✳</span>
+      </span>
+      <small>A place for things in progress.</small>
+    </div>
+    <aside class="desktop-note">
+      <span class="note-pin" aria-hidden="true"></span>
+      <p>
+        {t.desktop.noteHeading}
+        <br />
+        {t.desktop.noteHeadingNext}
+      </p>
+      <span>
+        {t.desktop.noteFirst}
+        <br />
+        {t.desktop.noteSecond}
+      </span>
+      <span class="note-signature">{t.desktop.noteSignature}</span>
+    </aside>
+    <div class="window-layer" id="window-layer">
+      <Window
+        id="welcome"
+        title={t.windows.welcome}
+        icon="computer"
+        class="welcome-window"
+        locale={locale}
+        open
+      >
+        <WelcomePanel locale={locale} />
+      </Window>
+      <Window id="projects" title={t.appLabels.projects} class="projects-window" locale={locale}>
+        <ProjectsPanel locale={locale} />
+      </Window>
+      <Window
+        id="about"
+        title={t.windows.about}
+        icon="computer"
+        class="document-window"
+        locale={locale}
+      >
+        <AboutPanel locale={locale} />
+      </Window>
+      <Window
+        id="journey"
+        title={t.windows.journey}
+        icon="journal"
+        class="document-window"
+        locale={locale}
+      >
+        <JourneyPanel locale={locale} />
+      </Window>
+      <Window
+        id="contact"
+        title={t.windows.contact}
+        icon="mail"
+        class="document-window"
+        locale={locale}
+      >
+        <ContactPanel locale={locale} />
+      </Window>
+      <Window
+        id="experiments"
+        title={t.windows.experiments}
+        icon="bin"
+        class="document-window"
+        locale={locale}
+      >
+        <ExperimentsPanel locale={locale} />
+      </Window>
+      <Window
+        id="help"
+        title={t.windows.help}
+        icon="spark"
+        class="document-window"
+        locale={locale}
+      >
+        <HelpPanel locale={locale} />
+      </Window>
+    </div>
+    <p class="desktop-hint">
+      {t.desktop.hint}
+      <br />
+      <span>{t.desktop.hintAction}</span>
+    </p>
+  </main>
+  <Taskbar locale={locale} />
+</div>
+<BootScreen locale={locale} />
+<noscript>
+  <div class="noscript-note">
+    {locale === 'id' ? 'Desktop ini memerlukan JavaScript. Kamu tetap bisa ' : 'This desktop uses JavaScript. You can still '}
+    <a href={locale === 'en' ? '/en/projects/ecesa/' : '/projects/ecesa/'}>{locale === 'id' ? 'membaca cerita ecesa.id di sini' : 'read the ecesa.id project story here'}</a>.
+  </div>
+</noscript>
+<script>
+  import '../../scripts/desktop';
+</script>

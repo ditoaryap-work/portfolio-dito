@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectPreview from '../projects/ProjectPreview.astro';
+import { copy, getProjectPath, type Locale } from '../../data/copy';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = copy[locale].projects;
+const desktopCopy = copy[locale].desktop;
+const projects = (
+  await getCollection('projects', (project) => project.data.locale === locale)
+).sort((a, b) => a.data.order - b.data.order);
+---
+
+<div class="explorer-toolbar">
+  <button data-open-window="welcome">{copy[locale].welcome.hello}</button>
+  <span class="toolbar-divider"></span>
+  <span>{desktopCopy.myComputer}</span>
+  <span aria-hidden="true">›</span>
+  <strong>{t.title}</strong>
+</div>
+<div class="explorer-address">
+  <span>{desktopCopy.address}</span>
+  <div>{t.address}</div>
+</div>
+<div class="explorer-layout">
+  <aside class="explorer-sidebar">
+    <h2>{t.sidebarTitle}</h2>
+    <p>{t.sidebarBody}</p>
+    <hr />
+    <small>{t.selectHint}</small>
+  </aside>
+  <div class="project-files">
+    {projects.map((project) => (
+      <a
+        class:list={['project-file', `project-${project.data.artwork}`]}
+        href={getProjectPath(locale, project.data.projectSlug)}
+      >
+        <ProjectPreview project={project} locale={locale} />
+        <span class="project-file-type">
+          {t.caseStudy} · {String(project.data.order).padStart(2, '0')}
+        </span>
+        <strong>{project.data.title}</strong>
+        <span class="project-summary">{project.data.summary}</span>
+        <span class="project-highlight">
+          {project.data.highlight ?? t.unavailableMetric}
+        </span>
+        <small>
+          {t.read} <span aria-hidden="true">↗</span>
+        </small>
+      </a>
+    ))}
+  </div>
+</div>

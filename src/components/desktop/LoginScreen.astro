@@ -1,0 +1,88 @@
+---
+import PortraitReveal from '../ui/PortraitReveal.astro';
+import PixelIcon from '../ui/PixelIcon.astro';
+import { copy, getDesktopPath, type Locale } from '../../data/copy';
+import '../../styles/login.css';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale].login;
+---
+
+<section
+  class="login-screen"
+  id="login-screen"
+  aria-labelledby="login-title"
+  tabindex="-1"
+>
+  <div class="login-top">
+    <a class="login-wordmark" href={getDesktopPath(locale)}>
+      Dito<span>OS</span>
+    </a>
+    <div class="login-top-actions">
+      <a class="language-switch" href={getDesktopPath(locale === 'id' ? 'en' : 'id')} lang={locale === 'id' ? 'en' : 'id'}>
+        {copy[locale].language.label}
+      </a>
+      <a class="login-skip" href={getDesktopPath(locale, 'projects')}>
+        {t.skip} <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+  <div class="login-layout">
+    <div class="login-introduction">
+      <p class="login-personal">{t.personal}</p>
+      <h1 id="login-title">
+        {t.lineOne}<br />
+        {t.lineTwo}<br />
+        {t.lineThree}<span aria-hidden="true">·</span>
+      </h1>
+      <p class="login-description">{t.description}</p>
+      <div class="login-caption">
+        <span class="login-caption-line"></span>
+        <span>{t.caption}</span>
+      </div>
+    </div>
+    <div class="login-card window">
+      <div class="title-bar">
+        <div class="title-bar-text">
+          <PixelIcon name="computer" size={18} />
+          <span>{t.title}</span>
+        </div>
+      </div>
+      <div class="login-portrait-wrap">
+        <PortraitReveal eager locale={locale} />
+      </div>
+      <div class="login-identity">
+        <strong>{'Dito Aryaputra Ramadhani'}</strong>
+        <span>{t.tagline}</span>
+      </div>
+      <form class="login-form" id="login-form">
+        <label for="visitor-name">{t.label}</label>
+        <input
+          type="text"
+          id="visitor-name"
+          name="visitorName"
+          placeholder={t.placeholder}
+          maxlength="32"
+          autocomplete="given-name"
+        />
+        <div class="login-actions">
+          <button class="primary-button" type="submit">
+            {t.submit} <span aria-hidden="true">→</span>
+          </button>
+          <button type="button" data-enter-guest>
+            {t.guest}
+          </button>
+        </div>
+        <p class="login-privacy">{t.privacy}</p>
+      </form>
+      <div class="status-bar">
+        <p class="status-bar-field">{t.status}</p>
+        <p class="status-bar-field">{copy[locale].desktop.personalWorkspace}</p>
+      </div>
+    </div>
+  </div>
+  <footer class="login-footer">
+    <span>{t.footer}</span>
+    <span>{t.footerAside}</span>
+  </footer>
+</section>

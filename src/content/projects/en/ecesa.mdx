@@ -1,0 +1,52 @@
+---
+projectSlug: ecesa
+locale: en
+order: 1
+title: ecesa.id
+summary: A field reporting system for 24 provinces, with direct staff input and progress monitoring by contract.
+description: 'The ecesa.id story: from spreadsheet reporting and field needs to a centralized reporting system.'
+kind: Field reporting system
+role: Technical Staff · system development
+year: 2026–present
+status: Field reporting started in August 2026
+tools: [Next.js, NestJS, Drizzle ORM]
+artwork: ecesa
+highlight: 24 provinces · 14,000+ cumulative reports
+siteUrl: https://ecesa.id/
+---
+
+## Context and goal
+
+Before ecesa.id, an internal team received data from field staff and entered it into Google Sheets. That added a hand-off step between reporting and the people who did the work. Location entry had also used polygon-based spatial input.
+
+The goal was to give field staff a direct reporting path and make work progress easier to monitor by contract. Because reports support work across regions, the system also needed to record photos, location information, and a reason when no activity took place in a period.
+
+## What we built
+
+ecesa.id is a reporting application built with Next.js, NestJS, and Drizzle ORM. It uses role-based access control and provides a progress dashboard by contract.
+
+The report form supports photos, location details, and a reason for a period without activity. After gathering user feedback, the location flow was simplified from polygons to a table-based input.
+
+## My role and decisions
+
+I develop the system as part of my technical role at Indonesia’s Ministry of Agriculture. My responsibilities include translating user feedback into workflows, deployment, troubleshooting, maintenance, and improvements with AI assistance.
+
+An important decision was to move the reporting step closer to the work: field staff enter reports, while the central team follows status and progress through a dashboard. The location input also changed to fit the workflow people were using.
+
+## Results and impact
+
+The system supports reporting across 24 provinces. The latest project notes list more than 14,000 cumulative daily reports. That figure includes historical records entered during migration, not only reports added after launch. Field staff began entering reports in August 2026.
+
+Photos, location details, and reasons for inactive periods support monitoring and help retrieve records for potential BPK audits. This describes audit support; it does not claim that a specific audit has taken place.
+
+## Trade-offs and questions to measure
+
+Direct input reduces data hand-offs through the central team, but it makes clear forms and field guidance more important. The next step is to measure report completeness, entry time, and corrections by contract before comparing the new and previous workflows.
+
+Support for weak field connectivity is not documented. Offline use should be tested with field staff before it is listed as a feature.
+
+## What I learned
+
+The biggest change was not adding more fields. It was adapting the input to the work people actually do. User feedback changed polygon-based location entry into a simpler table flow.
+
+Operational systems also need attention after the code is written: access, deployment, day-to-day support, and the ability to find a record when someone needs it.

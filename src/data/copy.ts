@@ -1,0 +1,466 @@
+export const locales = ['id', 'en'] as const;
+export type Locale = (typeof locales)[number];
+
+export const copy = {
+  id: {
+    language: { label: 'English', otherLocale: 'en' },
+    appLabels: {
+      projects: 'Proyek Saya',
+      about: 'Tentang Saya',
+      journey: 'Perjalanan Saya',
+      contact: 'Kontak',
+      experiments: 'Eksperimen',
+      help: 'Panduan',
+    },
+    windows: {
+      welcome: 'Selamat datang di DitoOS',
+      about: 'Tentang Saya - Notepad',
+      journey: 'Perjalanan Saya - Jurnal',
+      contact: 'Hubungi Dito',
+      experiments: 'Eksperimen',
+      help: 'Panduan DitoOS',
+    },
+    desktop: {
+      ariaLabel: 'Desktop pribadi DitoOS',
+      explore: 'Jelajahi desktop',
+      noteHeading: 'Anggap saja',
+      noteHeadingNext: 'rumah sendiri.',
+      noteFirst: 'Buka folder.',
+      noteSecond: 'Ikuti rasa penasaranmu.',
+      noteSignature: 'Salam, Dito',
+      hint: 'Sudut kecil dari internet.',
+      hintAction: 'Klik folder. Lihat ceritanya.',
+      skipLabel: 'Lewati desktop dan baca cerita proyek',
+      taskbar: 'Bilah tugas desktop',
+      openWindows: 'Window terbuka',
+      start: 'Mulai',
+      makeHome: 'Anggap saja rumah sendiri.',
+      welcomeScreen: 'Layar sambutan',
+      restart: 'Mulai ulang sesi…',
+      personalWorkspace: 'Ruang kerja pribadi',
+      localTime: 'Waktu lokalmu',
+      ready: 'Siap',
+      address: 'Alamat',
+      myComputer: 'Komputer Saya',
+      projectsPath: 'C:\\Dito\\Proyek Saya',
+      openStory: 'Buka cerita',
+      projectFolderNote: 'Setiap proyek punya cerita proses dan hasilnya.',
+      allProjects: 'Jelajahi semua proyek',
+    },
+    welcome: {
+      menuLabel: 'Informasi window',
+      projects: 'Proyek',
+      journey: 'Perjalanan',
+      help: 'Bantuan',
+      personalWorkspace: 'Ruang kerja pribadi',
+      hello: 'Halo, teman.',
+      headlineFirst: 'Jendela kecil',
+      headlineSecond: 'ke dalam perjalanan saya',
+      description:
+        'Saya Dito. Di sini saya membagikan sistem yang saya bangun, keputusan di baliknya, dan hasil yang tercatat.',
+      make: 'Hal yang saya kerjakan',
+      makeHint: 'Lihat alur dan hasil setiap proyek',
+      steps: 'Langkah yang membawa saya ke sini',
+      stepsHint: 'Kenali pendidikan dan pengalaman saya',
+      footer: 'Mulai dari mana saja. Tiap folder membuka cerita berbeda.',
+      howToExplore: 'Cara menjelajah',
+    },
+    about: {
+      heading: 'Saya Dito.',
+      intro:
+        'Saya mengembangkan otomasi alur kerja dan sistem internal. Saya mulai dari memahami cara kerja orang di lapangan, lalu membangun alat yang membantu proses itu lebih jelas dan mudah ditelusuri.',
+      now: 'Yang sedang saya kerjakan',
+      nowBody:
+        'Di Kementerian Pertanian, saya mengembangkan alur pelaporan lapangan dan integrasi data. Di luar itu, saya mengerjakan produk web, website perusahaan, dan sistem operasional bersama tim maupun klien.',
+      approach: 'Cara saya bekerja',
+      approachBody:
+        'Saya menghubungkan kebutuhan pengguna dengan data, otomasi, dan aplikasi web. Saya ikut menangani proses dari rancangan hingga rilis dan pemeliharaan.',
+      profileLabel: 'Ringkasan profil',
+      explore: 'Lihat semua proyek',
+      contact: 'Hubungi saya',
+      skills: 'Alat yang sering saya pakai',
+      location: 'Jawa Barat, Indonesia',
+    },
+    journey: {
+      headlineFirst: 'Langkah demi langkah',
+      headlineSecond: 'sampai di sini.',
+      intro:
+        'Pendidikan, pekerjaan, dan hasil yang mengubah cara saya bekerja. Pilih satu jalur atau baca semuanya berurutan.',
+      filterLabel: 'Pilih bagian perjalanan',
+      overview: 'Semua',
+      categories: {
+        education: 'Pendidikan',
+        experience: 'Pengalaman',
+        milestones: 'Hasil & sertifikasi',
+      },
+      descriptions: {
+        education:
+          'Dasar yang saya bangun melalui kuliah dan program intensif.',
+        experience:
+          'Peran dan tanggung jawab yang saya jalani dari waktu ke waktu.',
+        milestones:
+          'Bukti pekerjaan, hasil terukur, dan pelatihan profesional.',
+      },
+      related: 'Baca cerita proyek terkait',
+      relatedLabel: 'Lihat proyek',
+      projectCta: 'Ingin melihat prosesnya?',
+      projectCtaBody:
+        'Buka proyek untuk melihat konteks, keputusan, alur kerja, dan hasilnya.',
+      openProjects: 'Buka folder proyek',
+      current: 'sekarang',
+    },
+    projects: {
+      title: 'Proyek Saya',
+      description:
+        'Delapan proyek di bidang sistem pelaporan, otomasi, produk web, dan pengalaman digital. Buka folder untuk membaca konteks, keputusan, dan hasilnya.',
+      address: 'C:\\Dito\\Proyek Saya',
+      sidebarTitle: 'Setiap hasil punya proses.',
+      sidebarBody:
+        'Baca kebutuhan awal, keputusan yang saya ambil, hasil yang tercatat, dan hal yang masih perlu diuji.',
+      selectHint: 'Pilih proyek untuk mengikuti prosesnya.',
+      caseStudy: 'Cerita proyek',
+      read: 'Baca studi kasus',
+      unavailableMetric: 'Hasil kerja terdokumentasi',
+    },
+    contact: {
+      headlineFirst: 'Ada sistem yang',
+      headlineSecond: 'bisa kita benahi?',
+      intro:
+        'Ceritakan alur kerja, masalah data, atau produk web yang ingin kamu kembangkan.',
+      email: 'Kirim email',
+      linkedin: 'Lihat LinkedIn',
+      github: 'Lihat GitHub',
+      website: 'Website pribadi',
+      workTogether: 'Terbuka untuk kolaborasi',
+      location: 'Jawa Barat, Indonesia · kerja jarak jauh dan hybrid',
+    },
+    experiments: {
+      title: 'Ruang eksperimen',
+      intro:
+        'Catatan kecil untuk hal yang belum punya studi kasus tersendiri: eksplorasi antarmuka, prototipe, dan alur otomasi.',
+      emptyTitle: 'Belum ada catatan eksperimen.',
+      emptyBody:
+        'Eksperimen akan muncul di sini ketika sudah punya konteks dan hasil yang layak dibagikan.',
+      projects: 'Lihat proyek yang sudah terdokumentasi',
+    },
+    help: {
+      title: 'Kenali desktop ini',
+      intro:
+        'Anggap DitoOS sebagai arsip proyek. Setiap ikon membuka bagian berbeda, seperti komputer pribadi sungguhan.',
+      open: 'Buka folder',
+      openBody: 'Pilih ikon atau tekan Enter saat ikonnya terfokus.',
+      windows: 'Atur window',
+      windowsBody:
+        'Seret title bar, lalu pakai tombol minimize, maximize, atau close.',
+      read: 'Baca cerita proyek',
+      readBody:
+        'Setiap cerita punya halaman sendiri yang bisa dibuka langsung atau dikirim sebagai tautan.',
+      language: 'Pilih bahasa',
+      languageBody:
+        'Pakai ID / EN di taskbar. Cerita proyek tersedia dalam kedua bahasa.',
+      touch: 'Di ponsel',
+      touchBody:
+        'Ketuk ikon untuk membuka folder. Isi window bisa digulir di dalam bingkainya.',
+      goProjects: 'Buka proyek',
+    },
+    login: {
+      skip: 'Langsung ke proyek',
+      personal: 'Sudut kecil dari internet.',
+      lineOne: 'Proses di',
+      lineTwo: 'balik setiap',
+      lineThree: 'proyek.',
+      description:
+        'Saya Dito. Saya membangun otomasi alur kerja, sistem internal, dan produk web, lalu mencatat proses serta hasilnya.',
+      caption: 'Portofolio Dito Aryaputra Ramadhani.',
+      title: 'Selamat datang di DitoOS',
+      tagline: 'Otomasi · sistem internal · produk web',
+      label: 'Nama panggilan',
+      placeholder: 'Opsional',
+      submit: 'Mulai sesi',
+      guest: 'Masuk sebagai tamu',
+      privacy: 'Nama hanya dipakai untuk sapaan lokal di perangkat ini.',
+      status: 'Ruang kerja siap dijelajahi',
+      footer: 'Jelajahi proyek, pengalaman, dan proses kerja saya.',
+      footerAside: 'Tidak ada akun yang diperlukan.',
+    },
+    boot: {
+      title: 'DitoOS · Persiapan',
+      heading: 'Menyiapkan desktop',
+      description:
+        'Menata arsip proyek dan ruang kerja. Tombol masuk akan muncul saat semuanya siap.',
+      steps: [
+        'Menata arsip proyek.',
+        'Memuat konteks dan keputusan.',
+        'Menyiapkan hasil dan catatan proses.',
+        'Desktop siap untuk dijelajahi.',
+      ],
+      enter: 'Masuk ke desktop',
+      skip: 'Lewati persiapan',
+      progress: 'Persiapan desktop',
+      caption: 'PERSIAPAN SISTEM · DITOOS',
+      ready: 'Desktop siap. Silakan masuk.',
+    },
+    case: {
+      skip: 'Lewati desktop dan baca cerita proyek',
+      back: 'Kembali ke desktop',
+      breadcrumb: 'DitoOS / Proyek Saya',
+      read: 'Baca cerita',
+      details: 'Detail proyek',
+      chapters: 'Bab cerita proyek',
+      behind: 'Di balik pekerjaan',
+      storyArc: 'Pilih bab untuk mengikuti proses proyek ini.',
+      allProjects: 'Semua proyek',
+      illustration: 'Ilustrasi alur proyek',
+      illustrationNote: 'Diagram ilustratif, bukan tangkapan layar produk.',
+      project: 'Proyek',
+      role: 'Peran',
+      period: 'Periode',
+      tools: 'Teknologi dan alat',
+      visit: 'Lihat situs',
+      footer:
+        'Keputusan yang jelas membantu kita memahami dan mengembangkan hasilnya.',
+      explore: 'Jelajahi proyek lain',
+      end: 'Akhir cerita',
+    },
+    notFound: {
+      title: 'Halaman tidak ditemukan | DitoOS',
+      headline: 'File ini tersesat.',
+      body: 'Halaman yang kamu cari tidak tersedia.',
+      home: 'Kembali ke desktop',
+    },
+  },
+  en: {
+    language: { label: 'Bahasa Indonesia', otherLocale: 'id' },
+    appLabels: {
+      projects: 'My Projects',
+      about: 'About Me',
+      journey: 'My Journey',
+      contact: 'Contact',
+      experiments: 'Experiments',
+      help: 'Quick Guide',
+    },
+    windows: {
+      welcome: 'Welcome to DitoOS',
+      about: 'About Me - Notepad',
+      journey: 'My Journey - Journal',
+      contact: 'Contact Dito',
+      experiments: 'Experiments',
+      help: 'DitoOS Guide',
+    },
+    desktop: {
+      ariaLabel: 'DitoOS personal desktop',
+      explore: 'Explore the desktop',
+      noteHeading: 'Make yourself',
+      noteHeadingNext: 'at home.',
+      noteFirst: 'Open a folder.',
+      noteSecond: 'Follow your curiosity.',
+      noteSignature: 'Enjoy your stay, Dito',
+      hint: 'A small corner of the internet.',
+      hintAction: 'Click a folder. Follow its story.',
+      skipLabel: 'Skip the desktop and read a project story',
+      taskbar: 'Desktop taskbar',
+      openWindows: 'Open windows',
+      start: 'Start',
+      makeHome: 'Make yourself at home.',
+      welcomeScreen: 'Welcome screen',
+      restart: 'Restart session…',
+      personalWorkspace: 'Personal workspace',
+      localTime: 'Your local time',
+      ready: 'Ready',
+      address: 'Address',
+      myComputer: 'My Computer',
+      projectsPath: 'C:\\Dito\\My Projects',
+      openStory: 'Open story',
+      projectFolderNote:
+        'Every project has a story behind its process and results.',
+      allProjects: 'Explore all projects',
+    },
+    welcome: {
+      menuLabel: 'Window information',
+      projects: 'Projects',
+      journey: 'Journey',
+      help: 'Help',
+      personalWorkspace: 'A personal workspace',
+      hello: 'Hello, there.',
+      headlineFirst: 'A small window',
+      headlineSecond: 'into my journey',
+      description:
+        'I’m Dito. Here I share the systems I build, the decisions behind them, and the outcomes on record.',
+      make: 'Things I work on',
+      makeHint: 'Explore the process and result of each project',
+      steps: 'The steps that brought me here',
+      stepsHint: 'Get to know my education and experience',
+      footer: 'Start anywhere. Each folder opens a different story.',
+      howToExplore: 'How to explore',
+    },
+    about: {
+      heading: 'I’m Dito.',
+      intro:
+        'I build workflow automations and internal systems. I start by understanding how people work in the field, then make tools that help the process become clearer and easier to trace.',
+      now: 'What I work on',
+      nowBody:
+        'At Indonesia’s Ministry of Agriculture, I develop field reporting and data integration workflows. Outside that role, I build web products, company websites, and operational systems with teams and clients.',
+      approach: 'How I work',
+      approachBody:
+        'I connect user needs with data, automation, and web applications. My work spans planning, release, and ongoing maintenance.',
+      profileLabel: 'Profile snapshot',
+      explore: 'Explore all projects',
+      contact: 'Contact me',
+      skills: 'Tools I use often',
+      location: 'West Java, Indonesia',
+    },
+    journey: {
+      headlineFirst: 'Step by step',
+      headlineSecond: 'to where I am.',
+      intro:
+        'Education, work, and outcomes that changed how I approach a problem. Choose one thread or read them in order.',
+      filterLabel: 'Choose a part of the journey',
+      overview: 'Overview',
+      categories: {
+        education: 'Education',
+        experience: 'Experience',
+        milestones: 'Results & credentials',
+      },
+      descriptions: {
+        education: 'Foundations built through university and focused programs.',
+        experience: 'Roles and responsibilities I have taken on over time.',
+        milestones:
+          'Evidence of work, measured outcomes, and professional learning.',
+      },
+      related: 'Read the related project story',
+      relatedLabel: 'View project',
+      projectCta: 'Want to see how it came together?',
+      projectCtaBody:
+        'Open a project to explore its context, decisions, workflow, and results.',
+      openProjects: 'Open project folder',
+      current: 'Present',
+    },
+    projects: {
+      title: 'My Projects',
+      description:
+        'Eight projects across reporting systems, automation, web products, and digital experiences. Open a folder to explore their context, decisions, and outcomes.',
+      address: 'C:\\Dito\\My Projects',
+      sidebarTitle: 'Every result has a process.',
+      sidebarBody:
+        'Read the starting point, the decisions I made, the documented outcomes, and what still needs testing.',
+      selectHint: 'Choose a project to follow its process.',
+      caseStudy: 'Project story',
+      read: 'Read the case study',
+      unavailableMetric: 'Documented project work',
+    },
+    contact: {
+      headlineFirst: 'Have a workflow',
+      headlineSecond: 'we can improve?',
+      intro:
+        'Tell me about an operational process, a data problem, or a web product you want to build.',
+      email: 'Send an email',
+      linkedin: 'View LinkedIn',
+      github: 'View GitHub',
+      website: 'Personal website',
+      workTogether: 'Open to collaboration',
+      location: 'West Java, Indonesia · remote and hybrid',
+    },
+    experiments: {
+      title: 'Experiment room',
+      intro:
+        'A place for work that does not need a full case study yet: interface explorations, prototypes, and automation flows.',
+      emptyTitle: 'No experiment notes yet.',
+      emptyBody:
+        'An experiment will appear here when it has enough context and a result worth sharing.',
+      projects: 'See documented projects',
+    },
+    help: {
+      title: 'Meet this desktop',
+      intro:
+        'Think of DitoOS as a project archive. Each icon opens a different part of the workspace, like a personal computer.',
+      open: 'Open a folder',
+      openBody: 'Select an icon, or press Enter when it has focus.',
+      windows: 'Arrange windows',
+      windowsBody: 'Drag the title bar, then minimize, maximize, or close it.',
+      read: 'Read project stories',
+      readBody:
+        'Each story has its own page that you can open directly or share as a link.',
+      language: 'Choose a language',
+      languageBody:
+        'Use ID / EN on the taskbar. Project stories are available in both.',
+      touch: 'On a phone',
+      touchBody:
+        'Tap an icon to open a folder. Window content scrolls inside its frame.',
+      goProjects: 'Open projects',
+    },
+    login: {
+      skip: 'Go straight to projects',
+      personal: 'A small corner of the internet.',
+      lineOne: 'The process',
+      lineTwo: 'behind each',
+      lineThree: 'project.',
+      description:
+        'I’m Dito. I build workflow automation, internal systems, and web products, then document the process and outcomes.',
+      caption: 'The portfolio of Dito Aryaputra Ramadhani.',
+      title: 'Welcome to DitoOS',
+      tagline: 'Automation · internal systems · web products',
+      label: 'What should I call you?',
+      placeholder: 'Optional',
+      submit: 'Start session',
+      guest: 'Continue as guest',
+      privacy: 'Your name is used only for a local greeting on this device.',
+      status: 'Workspace ready to explore',
+      footer: 'Explore my projects, experience, and process.',
+      footerAside: 'No account needed.',
+    },
+    boot: {
+      title: 'DitoOS · Preparing',
+      heading: 'Preparing the desktop',
+      description:
+        'Getting the project archive and workspace ready. The enter button will appear when it is done.',
+      steps: [
+        'Organizing the project archive.',
+        'Loading context and decisions.',
+        'Preparing outcomes and process notes.',
+        'Desktop ready to explore.',
+      ],
+      enter: 'Enter the desktop',
+      skip: 'Skip preparation',
+      progress: 'Desktop preparation',
+      caption: 'SYSTEM STARTUP · DITOOS',
+      ready: 'Desktop is ready. You can enter now.',
+    },
+    case: {
+      skip: 'Skip the desktop and read a project story',
+      back: 'Back to desktop',
+      breadcrumb: 'DitoOS / My Projects',
+      read: 'Read the story',
+      details: 'Project details',
+      chapters: 'Project story chapters',
+      behind: 'Behind the work',
+      storyArc: 'Choose a chapter to follow this project.',
+      allProjects: 'All projects',
+      illustration: 'Project journey illustration',
+      illustrationNote: 'Illustrative diagram, not a product screenshot.',
+      project: 'Project',
+      role: 'Role',
+      period: 'Period',
+      tools: 'Technology and tools',
+      visit: 'Visit the website',
+      footer: 'Clear decisions make results easier to understand and improve.',
+      explore: 'Explore another project',
+      end: 'End of story',
+    },
+    notFound: {
+      title: 'Page not found | DitoOS',
+      headline: 'This file wandered off.',
+      body: 'The page you are looking for is unavailable.',
+      home: 'Return to the desktop',
+    },
+  },
+} as const;
+
+export function getDesktopPath(locale: Locale, app?: string): string {
+  const base = locale === 'en' ? '/en/' : '/';
+  return app ? `${base}?app=${encodeURIComponent(app)}` : base;
+}
+
+export function getProjectPath(locale: Locale, slug: string): string {
+  const prefix = locale === 'en' ? '/en' : '';
+  return `${prefix}/projects/${slug}/`;
+}

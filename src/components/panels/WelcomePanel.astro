@@ -1,0 +1,56 @@
+---
+import PixelIcon from '../ui/PixelIcon.astro';
+import { copy, type Locale } from '../../data/copy';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale].welcome;
+---
+
+<div class="welcome-menu" aria-label={t.menuLabel}>
+  <button data-open-window="projects">{t.projects}</button>
+  <button data-open-window="journey">{t.journey}</button>
+  <button data-open-window="help">{t.help}</button>
+  <span class="welcome-menu-right">{t.personalWorkspace}</span>
+</div>
+<div class="welcome-content">
+  <div class="welcome-heading">
+    <PixelIcon name="computer" size={76} />
+    <div>
+      <p class="welcome-hello" data-greeting>{t.hello}</p>
+      <h1>
+        {t.headlineFirst}
+        <br />
+        {t.headlineSecond}<span class="pixel-period">.</span>
+      </h1>
+    </div>
+  </div>
+  <p class="welcome-description">
+    {t.description}
+  </p>
+  <div class="welcome-paths">
+    <button class="welcome-path" data-open-window="projects">
+      <PixelIcon name="folder" />
+      <span>
+        <strong>{t.make}</strong>
+        <small>{t.makeHint}</small>
+      </span>
+      <span class="path-arrow" aria-hidden="true">
+        ↗
+      </span>
+    </button>
+    <button class="welcome-path" data-open-window="journey">
+      <PixelIcon name="journal" />
+      <span>
+        <strong>{t.steps}</strong>
+        <small>{t.stepsHint}</small>
+      </span>
+      <span class="path-arrow" aria-hidden="true">
+        ↗
+      </span>
+    </button>
+  </div>
+</div>
+<div class="welcome-footer">
+  <span>{t.footer}</span>
+  <button data-open-window="help">{t.howToExplore}</button>
+</div>

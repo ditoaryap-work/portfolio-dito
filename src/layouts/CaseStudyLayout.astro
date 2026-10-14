@@ -1,0 +1,245 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PixelIcon from '../components/ui/PixelIcon.astro';
+import ProjectIllustration from '../components/projects/ProjectIllustration.astro';
+import type { CollectionEntry } from 'astro:content';
+import {
+  copy,
+  getDesktopPath,
+  getProjectPath,
+  type Locale,
+} from '../data/copy';
+import '../styles/case-study.css';
+interface Props {
+  project: CollectionEntry<'projects'>;
+  headings?: { depth: number; slug: string; text: string }[];
+  locale: Locale;
+}
+const { project, headings = [], locale } = Astro.props;
+const { data } = project;
+const t = copy[locale].case;
+const desktopPath = getDesktopPath(locale, 'projects');
+const menu =
+  locale === 'id'
+    ? {
+        brief: 'Konteks dan tujuan',
+        role: 'Peran dan keputusan',
+        impact: 'Hasil dan pembelajaran',
+      }
+    : {
+        brief: 'Context and goal',
+        role: 'Role and decisions',
+        impact: 'Results and learning',
+      };
+const chapterLabels = new Set([menu.brief, menu.role, menu.impact]);
+---
+
+<BaseLayout
+  title={`${data.title} | Dito Aryaputra Ramadhani`}
+  description={data.description}
+  locale={locale}
+>
+  <a class="skip-link" href="#story">
+    {t.skip}
+  </a>
+  <main class="case-desktop">
+    <nav
+      class="case-navigation"
+      aria-label={
+        locale === 'id' ? 'Navigasi cerita proyek' : 'Project story navigation'
+      }
+    >
+      <a class="button-link" href={desktopPath}>
+        <span aria-hidden="true">←</span> {t.back}
+      </a>
+      <span>{t.breadcrumb}</span>
+      <div
+        class="case-language"
+        aria-label={locale === 'id' ? 'Bahasa halaman' : 'Page language'}
+      >
+        <a
+          href={getProjectPath('id', data.projectSlug)}
+          lang="id"
+          aria-current={locale === 'id' ? 'page' : undefined}
+        >
+          ID
+        </a>
+        <span aria-hidden="true">/</span>
+        <a
+          href={getProjectPath('en', data.projectSlug)}
+          lang="en"
+          aria-current={locale === 'en' ? 'page' : undefined}
+        >
+          EN
+        </a>
+      </div>
+    </nav>
+    <article class="window case-window">
+      <header class="title-bar">
+        <div class="title-bar-text">
+          <PixelIcon name="journal" size={18} />
+          <span>{data.title}</span>
+        </div>
+        <a
+          href={desktopPath}
+          class="case-close"
+          aria-label={
+            locale === 'id'
+              ? 'Tutup cerita dan kembali ke desktop'
+              : 'Close the story and return to the desktop'
+          }
+        >
+          ×
+        </a>
+      </header>
+      <div class="case-toolbar">
+        <a href="#story">{t.read}</a>
+        <a href="#project-details">{t.details}</a>
+        {data.siteUrl && (
+          <a href={data.siteUrl} target="_blank" rel="noreferrer">
+            {t.visit} ↗
+          </a>
+        )}
+        <span>{data.status}</span>
+      </div>
+      <header class="case-hero">
+        <p class="case-eyebrow">
+          {data.kind} <span aria-hidden="true">·</span>{' '}
+          {String(data.order).padStart(2, '0')}
+        </p>
+        <h1>
+          {data.title}
+          <span>.</span>
+        </h1>
+        <p class="case-summary">{data.summary}</p>
+        <ProjectIllustration project={project} locale={locale} />
+      </header>
+      <dl class="project-details" id="project-details">
+        <div>
+          <dt>{t.project}</dt>
+          <dd>{data.kind}</dd>
+        </div>
+        <div>
+          <dt>{t.role}</dt>
+          <dd>{data.role}</dd>
+        </div>
+        {data.year && (
+          <div>
+            <dt>{t.period}</dt>
+            <dd>{data.year}</dd>
+          </div>
+        )}
+        <div>
+          <dt>{t.tools}</dt>
+          <dd>{data.tools.join(', ')}</dd>
+        </div>
+      </dl>
+      <div class="case-reading-layout">
+        <aside class="case-sidebar">
+          <PixelIcon name="journal" size={40} />
+          <p>{t.behind}</p>
+          <nav class="story-chapters" aria-label={t.chapters}>
+            {headings
+              .filter((heading) => heading.depth === 2)
+              .map((heading, index) => (
+                <a
+                  href={`#${heading.slug}`}
+                  data-story-link={heading.slug}
+                  aria-current={index === 0 ? 'location' : undefined}
+                  class:list={{
+                    'is-chapter-pivot': chapterLabels.has(heading.text),
+                  }}
+                >
+                  <span aria-hidden="true">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  {heading.text}
+                </a>
+              ))}
+          </nav>
+          <span>{t.storyArc}</span>
+          <a href={desktopPath}>{t.allProjects} ↗</a>
+        </aside>
+        <div class="case-prose" id="story">
+          <slot />
+        </div>
+      </div>
+      <footer class="case-footer">
+        <p>{t.footer}</p>
+        <a class="button-link" href={desktopPath}>
+          {t.explore} <span aria-hidden="true">↗</span>
+        </a>
+      </footer>
+      <div class="status-bar">
+        <p class="status-bar-field">{t.end}</p>
+        <p class="status-bar-field">DitoOS</p>
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+
+<script>
+  const chapterLinks = [
+    ...document.querySelectorAll<HTMLAnchorElement>('[data-story-link]'),
+  ];
+  const chapterHeadings = chapterLinks
+    .map((link) => document.getElementById(link.dataset.storyLink ?? ''))
+    .filter(
+      (heading): heading is HTMLElement => heading instanceof HTMLElement,
+    );
+
+  if (chapterLinks.length && chapterHeadings.length) {
+    const setActiveChapter = (slug: string) => {
+      chapterLinks.forEach((link) => {
+        if (link.dataset.storyLink === slug)
+          link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    const syncActiveChapter = () => {
+      const hash = decodeURIComponent(location.hash.slice(1));
+      const hashHeading = chapterHeadings.find(
+        (heading) => heading.id === hash,
+      );
+      const hashTop = hashHeading?.getBoundingClientRect().top;
+      if (
+        hashHeading &&
+        hashTop !== undefined &&
+        hashTop >= -80 &&
+        hashTop <= window.innerHeight * 0.28
+      ) {
+        setActiveChapter(hashHeading.id);
+        return;
+      }
+      const atBottom =
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight - 2;
+      if (atBottom) {
+        setActiveChapter(chapterHeadings[chapterHeadings.length - 1].id);
+        return;
+      }
+      const readingLine = window.innerHeight * 0.22;
+      const active = [...chapterHeadings]
+        .reverse()
+        .find((heading) => heading.getBoundingClientRect().top <= readingLine);
+      setActiveChapter(active?.id ?? chapterHeadings[0].id);
+    };
+    let scrollFrame = 0;
+    const scheduleChapterSync = () => {
+      if (scrollFrame) return;
+      scrollFrame = requestAnimationFrame(() => {
+        scrollFrame = 0;
+        syncActiveChapter();
+      });
+    };
+    chapterLinks.forEach((link) =>
+      link.addEventListener('click', () => {
+        if (link.dataset.storyLink) setActiveChapter(link.dataset.storyLink);
+      }),
+    );
+    window.addEventListener('scroll', scheduleChapterSync, { passive: true });
+    window.addEventListener('resize', scheduleChapterSync);
+    window.addEventListener('hashchange', scheduleChapterSync);
+    scheduleChapterSync();
+  }
+</script>
